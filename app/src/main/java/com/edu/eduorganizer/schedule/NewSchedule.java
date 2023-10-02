@@ -18,6 +18,7 @@ import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -211,6 +212,19 @@ public class NewSchedule extends AppCompatActivity implements View.OnClickListen
         saveButton.setOnClickListener(this);
         saveAndDup.setOnClickListener(this);
 
+        spinnerDay.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                selectedDay = parentView.getItemAtPosition(position).toString();
+
+                Toast.makeText(getApplicationContext(), "Selected Day: " + selectedDay, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+
+            }
+        });
 
 
     }
@@ -291,7 +305,7 @@ public class NewSchedule extends AppCompatActivity implements View.OnClickListen
         String sub_teacher = String.valueOf(teacher.getText());
         String from_time = String.valueOf(timeFrom.getText());
         String to_time = String.valueOf(timeTo.getText());
-        String selDay = spinnerDay.getSelectedItem().toString();
+        String selDay = selectedDay;
 
         ScheduleItem scheduleItem = new ScheduleItem();
         scheduleItem.setTId(user.getUniqueId());

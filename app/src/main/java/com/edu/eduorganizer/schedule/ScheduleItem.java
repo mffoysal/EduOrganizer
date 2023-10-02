@@ -31,6 +31,22 @@ public class ScheduleItem implements Serializable {
 
     }
 
+    public ScheduleItem(String subject, String subCode, String room, String startTime, String endTime, String scheduleDay, String tName) {
+
+    }
+
+    public ScheduleItem(String sub_name, String sub_code, String t_name, String room, String section, String start_time, String end_time, String day) {
+        this.sub_name = sub_name;
+        this.sub_code = sub_code;
+        this.t_name = t_name;
+        this.room = room;
+        this.section = section;
+        this.start_time = start_time;
+        this.end_time = end_time;
+        this.day = day;
+        this.dateTime = dateTime;
+    }
+
     public String getKey() {
         return key;
     }

@@ -182,7 +182,14 @@ public class AppWidget extends AppWidgetProvider {
         while (cursor.moveToNext()) {
             String time = cursor.getString(cursor.getColumnIndexOrThrow(ScheduleCo.ScheduleEntry.COLUMN_TIME));
             String subject = cursor.getString(cursor.getColumnIndexOrThrow(ScheduleCo.ScheduleEntry.COLUMN_SUBJECT));
-            scheduleItems.add(new ScheduleItem(time, subject));
+            String subCode = cursor.getString(cursor.getColumnIndexOrThrow(ScheduleCo.ScheduleEntry.COLUMN_SUBJECT_CODE));
+            String section = cursor.getString(cursor.getColumnIndexOrThrow(ScheduleCo.ScheduleEntry.COLUMN_SECTION));
+            String room = cursor.getString(cursor.getColumnIndexOrThrow(ScheduleCo.ScheduleEntry.COLUMN_ROOM));
+            String startTime = cursor.getString(cursor.getColumnIndexOrThrow(ScheduleCo.ScheduleEntry.COLUMN_START_TIME));
+            String endTime = cursor.getString(cursor.getColumnIndexOrThrow(ScheduleCo.ScheduleEntry.COLUMN_END_TIME));
+            String scheduleDay = cursor.getString(cursor.getColumnIndexOrThrow(ScheduleCo.ScheduleEntry.COLUMN_DAY));
+            String tName = cursor.getString(cursor.getColumnIndexOrThrow(ScheduleCo.ScheduleEntry.COLUMN_T_NAME));
+            scheduleItems.add(new ScheduleItem(subject,subCode,tName,room,section,startTime,endTime,scheduleDay));
         }
 
 

@@ -157,7 +157,7 @@ public class AppWidgetFactory implements RemoteViewsService.RemoteViewsFactory {
         RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_item);
 //        cursor.moveToPosition(position);
         ScheduleItem scheduleItem = schedules.get(position);
-        rv.setTextViewText(R.id.edu_title_text_view_item_widget, scheduleItem.getSub_code()+"   ~   "+scheduleItem.getRoom());
+        rv.setTextViewText(R.id.edu_title_text_view_item_widget, scheduleItem.getSub_code()+"   ~   "+scheduleItem.getSection());
 //        rv.setTextViewText(R.id.edu_title_text_view_item_widget, scheduleItem.getSub_name()+" - "+scheduleItem.getSub_code());
 //        rv.setTextViewText(R.id.edu_title_text_view_item_widget, scheduleItem.getSub_name().replace("\n", " "));
         rv.setTextViewText(R.id.edu_date_time_text_view_item_widget, "  "+scheduleItem.getStart_time()+" - "+scheduleItem.getEnd_time()+"  "+scheduleItem.getT_name());
