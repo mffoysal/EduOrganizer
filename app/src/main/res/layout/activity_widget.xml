@@ -213,7 +213,8 @@
         <ListView
             android:id="@+id/schedule_list_view_widgett"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="#30FFFFFF">
 
         </ListView>
         <LinearLayout
