@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference
+        android:key="draw_over_apps"
+        android:title="Enable Edu Bubble"
+        android:summary="Allow the app to display a floating bubble."
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
+        android:key="permission_camera"
+        android:title="Camera"
+        android:summary="Enable camera access"
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
+        android:key="permission_location"
+        android:title="Location"
+        android:summary="Enable location access"
+        android:defaultValue="false" />
+
+    <SwitchPreferenceCompat
+        android:key="permission_call"
+        android:title="Call Permission"
+        android:summary="Enable call permission"
+        android:defaultValue="false" />
+
+    <SwitchPreferenceCompat
+        android:key="permission_sms"
+        android:title="SMS Permission"
+        android:summary="Enable SMS permission"
+        android:defaultValue="false" />
+
+    <SwitchPreferenceCompat
+        android:key="permission_bluetooth"
+        android:title="Bluetooth Permission"
+        android:summary="Enable Bluetooth permission"
+        android:defaultValue="false" />
+
+    <SwitchPreferenceCompat
+        android:key="permission_wifi"
+        android:title="WiFi Permission"
+        android:summary="Enable WiFi permission"
+        android:defaultValue="false" />
+
+    <SwitchPreferenceCompat
+        android:key="permission_nfc"
+        android:title="NFC Permission"
+        android:summary="Enable NFC permission"
+        android:defaultValue="false" />
+
+    <SwitchPreferenceCompat
+        android:key="permission_hotspot"
+        android:title="Hotspot Permission"
+        android:summary="Enable Hotspot permission"
+        android:defaultValue="false" />
+
+
+</PreferenceScreen>

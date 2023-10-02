@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="com_google_android_gms_fonts_certs" />
+    <string-array name="searchByParams">
+        <item>Search by Course Code</item>
+        <item>Search by Course Title</item>
+        <item>Search by Teacher</item>
+        <item>Search by Room</item>
+    </string-array>
+    <string-array name="weekdays">
+        <item>Saturday</item>
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+    </string-array>
+    <string-array name="level_array">
+        <item>Level 1</item>
+        <item>Level 2</item>
+        <item>Level 3</item>
+        <item>Level 4</item>
+    </string-array>
+    <string-array name="term_array">
+        <item>Term 1</item>
+        <item>Term 2</item>
+        <item>Term 3</item>
+    </string-array>
+    <string-array name="cse_main_eve_level_array">
+        <item>Level 1</item>
+        <item>Level 2</item>
+        <item>Level 3</item>
+    </string-array>
+
+    <string-array name="time_delay">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>45 minutes</item>
+        <item>1 hour</item>
+        <item>2 hours</item>
+    </string-array>
+
+    <!-- Universal -->
+
+    <string-array name="programs">
+        <item>Day</item>
+        <item>Evening</item>
+    </string-array>
+
+    <string-array name="user_type">
+        <item>As a Student</item>
+        <item>As a Teacher</item>
+    </string-array>
+
+    <string-array name="search_page_titles">
+        <item>Browse routine</item>
+        <item>Empty rooms</item>
+        <item>Teachers</item>
+    </string-array>
+
+    <string-array name="search_room_type">
+        <item>By Room</item>
+        <item>By Time</item>
+    </string-array>
+    <string-array name="dayArray" >
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Everyday</item>
+    </string-array>
+</resources>

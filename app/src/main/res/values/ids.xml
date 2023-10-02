@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="skipButton" type="id" />
+    <item name="slideViewPager" type="id" />
+    <item name="backButton" type="id" />
+    <item name="nextButton" type="id" />
+    <item name="dotIndicator" type="id" />
+    <item name="ellipse1" type="id" />
+    <item name="ellipse2" type="id" />
+    <item name="backbtn" type="id" />
+    <item name="nextbtn" type="id" />
+    <item name="indicator_layout" type="id" />
+    <item name="userPanelNavViewId" type="id" />
+    <item name="appnavbarId" type="id" />
+    <item name="mainLayoutId" type="id" />
+    <item name="userPanelMainFrameId" type="id" />
+    <item name="navAddId" type="id" />
+    <item name="toolbarr" type="id" />
+    <item name="editButton" type="id" />
+    <item name="linearLayout" type="id" />
+</resources>

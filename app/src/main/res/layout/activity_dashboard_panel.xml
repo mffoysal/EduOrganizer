@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/oldlace"
+    android:layout_gravity="center"
+    android:id="@+id/drawer_layoutt"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    tools:context=".panel.DashboardPanel">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/drawer_layout"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start"
+        tools:context=".common.FM">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:title="@string/app_name" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/toolbarr"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_height="40dp"
+                    android:id="@+id/setMenuId"
+                    android:layout_width="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_menu_manage" />
+                <ImageView
+                    android:background="@color/banner_background"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="40dp"
+                    android:padding="5dp"
+                    android:src="@drawable/fab_add" />
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/fragment_container"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/nav_view"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/nav_header"
+            app:menu="@menu/nav_menu_two"
+            app:itemIconTint="@color/lavender"
+            app:itemTextColor="@color/lavender"/>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+    <!--    <androidx.appcompat.widget.Toolbar-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="56dp"-->
+    <!--        android:id="@+id/toolbar"-->
+    <!--        android:elevation="4dp"-->
+    <!--        android:background="#E9252020"-->
+    <!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+    <!--        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/userPanelMainFrameId"/>
+
+
+
+
+    <!--    <RelativeLayout-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content">-->
+
+    <!--        <com.airbnb.lottie.LottieAnimationView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:id="@+id/dashImage2Id"-->
+    <!--            app:lottie_rawRes="@raw/hello1"-->
+    <!--            app:lottie_autoPlay="true"-->
+    <!--            android:layout_centerInParent="true"-->
+    <!--            >-->
+
+    <!--        </com.airbnb.lottie.LottieAnimationView>-->
+
+    <!--    </RelativeLayout>-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="180dp"-->
+    <!--        android:layout_height="60dp"-->
+    <!--        android:id="@+id/dashToneId"-->
+    <!--        android:text="EduPanel"-->
+    <!--        android:textColor="@color/lavenda"-->
+    <!--        android:textSize="28dp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        android:layout_marginTop="42dp"-->
+    <!--        android:background="@drawable/lavender_border"-->
+    <!--        android:gravity="center_vertical|center_horizontal">-->
+
+    <!--    </TextView>-->
+
+    <!--    <GridLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:id="@+id/gridLDashId"-->
+    <!--        android:rowCount="2"-->
+    <!--        android:columnCount="3"-->
+    <!--        android:layout_marginStart="10dp"-->
+    <!--        android:layout_marginEnd="10dp"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:layout_marginBottom="80dp">-->
+
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:id="@+id/dashCard2Id"-->
+    <!--            android:layout_width="115dp"-->
+    <!--            android:layout_height="95dp"-->
+    <!--            android:layout_row="0"-->
+    <!--            android:layout_column="0"-->
+    <!--            android:layout_margin="8dp"-->
+    <!--            android:layout_gravity="bottom"-->
+    <!--            app:cardCornerRadius="20dp"-->
+    <!--            android:backgroundTint="@color/white"-->
+    <!--            android:background="@color/white"-->
+    <!--            app:cardElevation="10dp">-->
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="vertical"-->
+    <!--                android:gravity="center"-->
+    <!--                android:background="@color/white"-->
+    <!--                android:backgroundTint="@color/white"-->
+    <!--                android:layout_gravity="center_vertical|center_horizontal">-->
+
+    <!--                <ImageView-->
+    <!--                    android:layout_width="50dp"-->
+    <!--                    android:layout_height="50dp"-->
+    <!--                    android:src="@drawable/baseline_person_2_24">-->
+
+    <!--                </ImageView>-->
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="USER"-->
+    <!--                    android:textStyle="bold"-->
+    <!--                    android:textSize="24dp"-->
+    <!--                    android:textColor="@color/lavenda"-->
+    <!--                    android:textAlignment="center">-->
+
+    <!--                </TextView>-->
+
+    <!--            </LinearLayout>-->
+    <!--        </androidx.cardview.widget.CardView>-->
+
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:id="@+id/dashCard3Id"-->
+    <!--            android:layout_width="115dp"-->
+    <!--            android:layout_height="95dp"-->
+    <!--            android:layout_row="0"-->
+    <!--            android:layout_column="2"-->
+    <!--            android:layout_gravity="bottom"-->
+    <!--            android:layout_margin="8dp"-->
+    <!--            android:background="@color/lavenda"-->
+    <!--            android:backgroundTint="@color/white"-->
+    <!--            app:cardCornerRadius="20dp"-->
+    <!--            app:cardElevation="10dp">-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center_vertical|center_horizontal"-->
+    <!--                android:background="@color/white"-->
+    <!--                android:backgroundTint="@color/white"-->
+    <!--                android:gravity="center"-->
+    <!--                android:orientation="vertical">-->
+
+    <!--                <ImageView-->
+    <!--                    android:layout_width="50dp"-->
+    <!--                    android:layout_height="50dp"-->
+    <!--                    android:src="@drawable/baseline_person_pin_24">-->
+
+    <!--                </ImageView>-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="STUDENT"-->
+    <!--                    android:textAlignment="center"-->
+    <!--                    android:textColor="@color/lavenda"-->
+    <!--                    android:textSize="24dp"-->
+    <!--                    android:textStyle="bold">-->
+
+    <!--                </TextView>-->
+
+    <!--            </LinearLayout>-->
+    <!--        </androidx.cardview.widget.CardView>-->
+
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:id="@+id/dashCard4Id"-->
+    <!--            android:layout_width="115dp"-->
+    <!--            android:layout_height="95dp"-->
+    <!--            android:layout_row="1"-->
+    <!--            android:layout_column="0"-->
+    <!--            android:layout_margin="8dp"-->
+    <!--            android:background="@color/lavenda"-->
+    <!--            android:backgroundTint="@color/white"-->
+    <!--            app:cardCornerRadius="20dp"-->
+    <!--            app:cardElevation="10dp">-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center_vertical|center_horizontal"-->
+    <!--                android:background="@color/white"-->
+    <!--                android:backgroundTint="@color/white"-->
+    <!--                android:gravity="center"-->
+    <!--                android:orientation="vertical">-->
+
+    <!--                <ImageView-->
+    <!--                    android:layout_width="50dp"-->
+    <!--                    android:layout_height="50dp"-->
+    <!--                    android:src="@drawable/baseline_picture_as_pdf_24">-->
+
+    <!--                </ImageView>-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="PDF"-->
+    <!--                    android:textAlignment="center"-->
+    <!--                    android:textColor="@color/lavenda"-->
+    <!--                    android:textSize="24dp"-->
+    <!--                    android:textStyle="bold">-->
+
+    <!--                </TextView>-->
+
+    <!--            </LinearLayout>-->
+    <!--        </androidx.cardview.widget.CardView>-->
+
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:id="@+id/dashCard5Id"-->
+    <!--            android:layout_width="115dp"-->
+    <!--            android:layout_height="95dp"-->
+    <!--            android:layout_row="1"-->
+    <!--            android:layout_column="1"-->
+    <!--            android:layout_margin="8dp"-->
+    <!--            android:layout_gravity="bottom"-->
+    <!--            app:cardCornerRadius="20dp"-->
+    <!--            android:backgroundTint="@color/white"-->
+    <!--            android:background="@color/white"-->
+    <!--            app:cardElevation="10dp">-->
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="vertical"-->
+    <!--                android:gravity="center"-->
+    <!--                android:background="@color/white"-->
+    <!--                android:backgroundTint="@color/white"-->
+    <!--                android:layout_gravity="center_vertical|center_horizontal">-->
+
+    <!--                <ImageView-->
+    <!--                    android:layout_width="50dp"-->
+    <!--                    android:layout_height="50dp"-->
+    <!--                    android:src="@drawable/ic_home_black_24dp">-->
+
+    <!--                </ImageView>-->
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="CLASS"-->
+    <!--                    android:textStyle="bold"-->
+    <!--                    android:textSize="24dp"-->
+    <!--                    android:textColor="@color/lavenda"-->
+    <!--                    android:textAlignment="center">-->
+
+    <!--                </TextView>-->
+
+    <!--            </LinearLayout>-->
+    <!--        </androidx.cardview.widget.CardView>-->
+
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:id="@+id/dashCard6Id"-->
+    <!--            android:layout_width="115dp"-->
+    <!--            android:layout_height="95dp"-->
+    <!--            android:layout_row="1"-->
+    <!--            android:layout_column="2"-->
+    <!--            android:layout_gravity="bottom"-->
+    <!--            android:layout_margin="8dp"-->
+    <!--            android:background="@color/lavenda"-->
+    <!--            android:backgroundTint="@color/white"-->
+    <!--            app:cardCornerRadius="20dp"-->
+    <!--            app:cardElevation="10dp">-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center_vertical|center_horizontal"-->
+    <!--                android:background="@color/white"-->
+    <!--                android:backgroundTint="@color/white"-->
+    <!--                android:gravity="center"-->
+    <!--                android:orientation="vertical">-->
+
+    <!--                <ImageView-->
+    <!--                    android:layout_width="50dp"-->
+    <!--                    android:layout_height="50dp"-->
+    <!--                    android:src="@drawable/baseline_video_library_24">-->
+
+    <!--                </ImageView>-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="course"-->
+    <!--                    android:textAlignment="center"-->
+    <!--                    android:textColor="@color/lavenda"-->
+    <!--                    android:textSize="24dp"-->
+    <!--                    android:textStyle="bold">-->
+
+    <!--                </TextView>-->
+
+    <!--            </LinearLayout>-->
+    <!--        </androidx.cardview.widget.CardView>-->
+
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:id="@+id/dashCard1Id"-->
+    <!--            android:layout_width="115dp"-->
+    <!--            android:layout_height="95dp"-->
+    <!--            android:layout_row="0"-->
+    <!--            android:layout_column="1"-->
+    <!--            android:layout_gravity="bottom"-->
+    <!--            android:layout_margin="8dp"-->
+    <!--            android:background="@color/lavenda"-->
+    <!--            android:backgroundTint="@color/white"-->
+    <!--            app:cardCornerRadius="20dp"-->
+    <!--            app:cardElevation="10dp">-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center_vertical|center_horizontal"-->
+    <!--                android:background="@color/white"-->
+    <!--                android:backgroundTint="@color/white"-->
+    <!--                android:gravity="center"-->
+    <!--                android:orientation="vertical">-->
+
+    <!--                <ImageView-->
+    <!--                    android:layout_width="50dp"-->
+    <!--                    android:layout_height="50dp"-->
+    <!--                    android:src="@drawable/baseline_person_4_24">-->
+
+    <!--                </ImageView>-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="Teacher"-->
+    <!--                    android:textAlignment="center"-->
+    <!--                    android:textColor="@color/lavenda"-->
+    <!--                    android:textSize="24dp"-->
+    <!--                    android:textStyle="bold">-->
+
+    <!--                </TextView>-->
+
+    <!--            </LinearLayout>-->
+    <!--        </androidx.cardview.widget.CardView>-->
+
+    <!--    </GridLayout>-->
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:paddingVertical="4dp"
+        android:id="@+id/mainLayoutId">
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/appnavbarId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:backgroundTint="#1E070B"
+        app:titleTextColor="@color/darksalmon"
+        android:background="@android:color/transparent"
+        app:fabCradleRoundedCornerRadius="50dp"
+        app:fabCradleMargin="5dp"
+        >
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@id/userPanelNavViewId"
+            app:labelVisibilityMode="labeled"
+            android:layout_marginEnd="10dp"
+            app:itemTextColor="@color/antiquewhite"
+            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
+            app:itemBackground="@color/zxing_transparent"
+            app:itemRippleColor="#DD2C54"
+            app:itemTextAppearanceActive="@color/lavenda"
+            app:itemActiveIndicatorStyle="@color/antiquewhite"
+            app:itemIconTint="#683644"
+            app:menu="@menu/bottom_menu">
+
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/navAddId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/whitesmoke"
+        android:background="@android:color/transparent"
+        android:src="@drawable/baseline_add_24"
+        android:tint="#430505"
+        android:layout_gravity="center"
+        app:layout_anchorGravity="center_horizontal"
+        app:layout_anchor="@id/appnavbarId"
+        app:maxImageSize="40dp">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    <!--    <com.google.android.material.navigation.NavigationView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:id="@+id/nav_view"-->
+    <!--        android:layout_gravity="start"-->
+    <!--        app:headerLayout="@layout/nav_header"-->
+    <!--        app:menu="@menu/nav_menu_two"-->
+    <!--        app:itemIconTint="@color/lavender"-->
+    <!--        app:itemTextColor="@color/lavender"/>-->
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

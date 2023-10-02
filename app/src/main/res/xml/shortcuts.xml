@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--static shortcut 1-->
+    <shortcut
+        android:shortcutId="shortcut1"
+        android:enabled="true"
+        android:icon="@drawable/baseline_document_scanner_24"
+        android:shortcutShortLabel="@string/shortcut_label1"
+        android:shortcutLongLabel="@string/shortcut_label1_long"
+        android:shortcutDisabledMessage="@string/shortcut_disabled_message1">
+        <intent
+            android:action="com.boltuix.appshortcut.action.VIEW_PROGRESSBAR"
+            android:targetClass="com.edu.eduorganizer.scanner.ScanActivity"
+            android:data="jetpack://shortCut"
+            android:targetPackage="com.edu.eduorganizer" />
+    </shortcut>
+
+    <!--static shortcut 2-->
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/baseline_add_card_24"
+        android:shortcutId="shortcut2"
+        android:shortcutShortLabel="@string/shortcut_label1"
+        android:shortcutLongLabel="@string/shortcut_label1_long"
+        android:shortcutDisabledMessage="@string/shortcut_disabled_message1"
+
+        >
+        <intent
+            android:action="com.boltuix.appshortcut.MainActivity.VIEWER"
+            android:targetClass="com.edu.eduorganizer.shortcut.ShortCut"
+            android:targetPackage="com.edu.eduorganizer"/>
+    </shortcut>
+
+    <!--static shortcut 1-->
+    <shortcut
+        android:shortcutId="shortcut3"
+        android:enabled="true"
+        android:icon="@drawable/baseline_add_card_24"
+        android:shortcutShortLabel="@string/shortcut_label3"
+        android:shortcutLongLabel="@string/shortcut_label1_long"
+        android:shortcutDisabledMessage="@string/shortcut_disabled_message1">
+        <intent
+            android:action="com.boltuix.appshortcut.MainActivity.ATTENDANCE"
+            android:targetClass="com.edu.eduorganizer.scanner.ScanId"
+            android:data="jetpack://shortCut"
+            android:targetPackage="com.edu.eduorganizer" />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="shortcut4"
+        android:enabled="true"
+        android:icon="@drawable/baseline_add_card_24"
+        android:shortcutShortLabel="@string/shortcut_label4"
+        android:shortcutLongLabel="@string/shortcut_label1_long"
+        android:shortcutDisabledMessage="@string/shortcut_disabled_message1">
+        <intent
+            android:action="com.boltuix.appshortcut.MainActivity.SET_ATTENDANCE"
+            android:targetClass="com.edu.eduorganizer.scanner.ScanIDActivity"
+            android:data="jetpack://shortCut"
+            android:targetPackage="com.edu.eduorganizer" />
+    </shortcut>
+
+</shortcuts>

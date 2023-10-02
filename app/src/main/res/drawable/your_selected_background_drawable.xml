@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background shape for the selected item -->
+    <item>
+        <shape
+            android:shape="rectangle">
+            <solid android:color="@color/selected_item_color" /> <!-- Set the selected item color here -->
+        </shape>
+    </item>
+    <!-- Add any other elements or drawables you want for the selected item -->
+    <!-- For example, you can add an icon or text here -->
+</layer-list>

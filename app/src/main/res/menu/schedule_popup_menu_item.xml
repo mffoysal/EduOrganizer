@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_duplicateId"
+        android:actionLayout="@layout/custom_menu_item_layout"
+        android:icon="@drawable/baseline_content_copy_24"
+        android:title="Duplicate" />
+    <item
+        android:id="@+id/menu_editId"
+        android:actionLayout="@layout/custom_menu_item_layout"
+        android:icon="@drawable/outline_edit_note_24"
+        android:title="Edit" />
+    <item
+        android:id="@+id/menu_deleteId"
+        android:actionLayout="@layout/custom_menu_item_layout"
+        android:icon="@drawable/baseline_delete_24"
+        android:title="Delete" />
+</menu>

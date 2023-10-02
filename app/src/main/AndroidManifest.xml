@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES" />
+    <uses-permission android:name="android.permission.HIDE_OVERLAY_WINDOWS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.hardware.CAMERA" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <uses-feature android:name="android.hardware.bluetooth" />
+    <uses-feature android:name="android.hardware.camera.flash" />
+    <uses-feature android:name="android.hardware.camera.front" />
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-feature android:name="android.hardware.nfc" />
+    <uses-feature android:name="android.hardware.location" />
+    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-feature android:name="android.hardware.location.network" />
+    <uses-feature android:name="android.hardware.wifi" />
+    <uses-feature android:name="android.hardware.wifi.direct" />
+    <uses-feature android:name="android.hardware.touchscreen" />
+    <uses-feature android:name="android.hardware.microphone" />
+    <uses-feature android:name="android.hardware.ethernet" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+
+    <meta-data
+        android:name="com.google.firebase.messaging.default_notification_channel_id"
+        android:value="@string/default_notification_channel_id" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/edu"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/edu"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EduOrganizner"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".schedule.ScheduleDetails"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel2"/>
+        <activity
+            android:name=".note.DuplicateNote"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".note.UpdateNote"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".note.NewNote"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".schedule.DuplicateSchedule"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".schedule.UpdateSchedule"
+            android:exported="false"
+            android:theme="@style/Theme.Onboarding" />
+        <activity
+            android:name=".schedule.NewSchedule"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".user.UserDetails"
+            android:exported="false"
+            android:theme="@style/Theme.Onboarding" />
+        <activity
+            android:name=".MainPanelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".user.UpdateProfile"
+            android:exported="false" />
+        <activity
+            android:name=".user.UserProfile"
+            android:exported="false" />
+        <activity
+            android:name=".ErrorPanel"
+            android:exported="false" />
+        <activity
+            android:name=".login.SignUpPage"
+            android:exported="false" />
+        <activity
+            android:name=".login.LoginMainPage"
+            android:exported="false" />
+        <activity
+            android:name=".login.LoginPage"
+            android:exported="false"
+            android:theme="@style/Theme.EduOrganizner" />
+        <activity
+            android:name=".sign.PasswordForgot"
+            android:exported="false" />
+        <activity
+            android:name=".panel.DashboardPanel"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".routine.day.DailyRoutine"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".routine.month.MonthlyRoutine"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".panel.MainPanel"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".panel.PanelUser"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".start.ViewOne"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Onboarding" />
+        <activity
+            android:name=".start.ViewTwo"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Onboarding" />
+        <activity
+            android:name=".sign.SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".sign.SignIn"
+            android:exported="false" />
+        <activity
+            android:name=".login.Login"
+            android:exported="false" />
+        <activity
+            android:name=".login.ui.login.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".bubble.MaxBubble"
+            android:exported="false" />
+        <activity
+            android:name=".web.WebServer"
+            android:exported="false" />
+        <activity
+            android:name=".web.WifiWeb"
+            android:exported="false" />
+        <activity
+            android:name=".scanner.AutoFocus"
+            android:screenOrientation="portrait"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".scanner.SetAttendance"
+            android:exported="false" />
+        <activity
+            android:name=".scanner.ScanIDActivity"
+            android:exported="false" />
+        <activity
+            android:name=".scanner.ScanIDCard"
+            android:exported="false" />
+        <activity
+            android:name=".settings.Permission"
+            android:exported="false" />
+        <activity
+            android:name=".settings.Settings"
+            android:exported="false"
+            android:label="Settings"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".bubble.WidgetLaunce"
+            android:enabled="true"
+            android:exported="true"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".bubble.Widget"
+            android:enabled="true"
+            android:exported="true" />
+        <activity
+            android:name=".bubble.AppWidget"
+            android:enabled="true"
+            android:exported="true" />
+        <activity
+            android:name=".bubble.Bubble"
+            android:exported="false" />
+        <activity
+            android:name=".deeplink.DeepLink"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="edubox.edu"
+                    android:pathPrefix="/edu"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="edu.edu"
+                    android:pathPrefix="/edu"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="edu.edu"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="farhad.foysal"
+                    android:pathPrefix="/ff"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="farhad.foysal"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="farhad.foysal"
+                    android:scheme="https" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="edubox.edu"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="edubox.edu"
+                    android:pathPrefix="/edu"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".scanner.ScanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".start.Start"
+            android:exported="false" />
+        <activity
+            android:name=".shortcut.ShortCut"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".welcome.Welcome"
+            android:exported="true"
+            android:screenOrientation="fullSensor">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.VIEW" /> -->
+            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+            <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+            <!-- <data android:scheme="https" android:host="edubox.edu" android:pathPrefix="/edu" /> -->
+            <!-- </intent-filter> -->
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
+        <activity
+            android:name=".splash.GetStart"
+            android:exported="false"
+            android:theme="@style/Theme.Onboarding" />
+        <activity
+            android:name=".update.Application"
+            android:exported="false" />
+        <activity
+            android:name=".update.Applications"
+            android:exported="false" />
+        <activity
+            android:name=".update.UpdateApp"
+            android:exported="false" />
+        <activity
+            android:name=".update.AppUpdate"
+            android:exported="false" />
+        <activity
+            android:name=".panel.UserPanel"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".login.LoginMainActivity"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.edu.eduorganizer"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <receiver
+            android:name=".internet.Internet"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".bubble.Bubble"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".bubble.MaxBubble"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".bubble.AppWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <receiver
+            android:name=".bubble.Widget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+        <receiver
+            android:name=".bubble.AppWidget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+        <receiver
+            android:name=".routine.ScheduleDataChanged"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.schedulerec.ACTION_SCHEDULE_DATA_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".widget.WidgetUpdateReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_layout" />
+        </receiver>
+        <receiver
+            android:name=".bubble.WidgetAlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <provider
+            android:name=".routine.ScheduleProvider"
+            android:authorities="com.edu.eduorganizer.bubble"
+            android:exported="false" />
+    </application>
+
+</manifest>

@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".web.WifiWeb">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:id="@+id/sessionCard"
+                    app:cardElevation="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="5.5">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:id="@+id/recImage"
+                            android:layout_weight="4"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/flag_bangladesh"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:weightSum="3"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/rounded_bg">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:padding="10dp"
+                                android:orientation="vertical">
+
+
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Server 1"
+                                    android:textStyle="bold"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="false"
+                                    android:textSize="20sp"
+                                    android:maxLines="1"
+                                    android:textColor="@color/lavender"
+                                    android:id="@+id/sessionName"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Desc"
+                                    android:textSize="18sp"
+                                    android:id="@+id/recDesc"
+                                    android:maxLines="0"/>
+
+                            </LinearLayout>
+
+                            <!--                        <LinearLayout-->
+                            <!--                            android:layout_width="0dp"-->
+                            <!--                            android:layout_height="match_parent"-->
+                            <!--                            android:layout_weight="0.9"-->
+                            <!--                            android:gravity="center">-->
+
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:text="ID"-->
+                            <!--                                android:textColor="@color/lavender"-->
+                            <!--                                android:textSize="18sp"-->
+                            <!--                                android:textAlignment="center"-->
+                            <!--                                android:id="@+id/recLang"/>-->
+
+                            <!--                        </LinearLayout>-->
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ToggleButton
+                                android:id="@+id/toggleButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textOn="Stop"
+                                android:textOff="Start"
+                                android:checked="false" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:id="@+id/sessionCard2"
+                    app:cardElevation="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="5.5">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:id="@+id/recImage2"
+                            android:layout_weight="4"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/flag_bangladesh"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:weightSum="3"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/rounded_bg">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:padding="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Server 2"
+                                    android:textStyle="bold"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textSize="20sp"
+                                    android:maxLines="1"
+                                    android:textColor="@color/lavender"
+                                    android:id="@+id/sessionName2"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Desc"
+                                    android:textSize="18sp"
+                                    android:id="@+id/recDesc2"
+                                    android:maxLines="0"/>
+
+                            </LinearLayout>
+
+                            <!--                        <LinearLayout-->
+                            <!--                            android:layout_width="0dp"-->
+                            <!--                            android:layout_height="match_parent"-->
+                            <!--                            android:layout_weight="0.9"-->
+                            <!--                            android:gravity="center">-->
+
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:text="ID"-->
+                            <!--                                android:textColor="@color/lavender"-->
+                            <!--                                android:textSize="18sp"-->
+                            <!--                                android:textAlignment="center"-->
+                            <!--                                android:id="@+id/recLang"/>-->
+
+                            <!--                        </LinearLayout>-->
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ToggleButton
+                                android:id="@+id/toggleButton2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textOn="Stop"
+                                android:textOff="Start"
+                                android:checked="false" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:id="@+id/sessionCard3"
+                    app:cardElevation="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="5.5">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:id="@+id/recImage3"
+                            android:layout_weight="4"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/flag_bangladesh"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:weightSum="3"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/rounded_bg">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:padding="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Server 3"
+                                    android:textStyle="bold"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textSize="20sp"
+                                    android:maxLines="1"
+                                    android:textColor="@color/lavender"
+                                    android:id="@+id/sessionName3"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Desc"
+                                    android:textSize="18sp"
+                                    android:id="@+id/recDesc3"
+                                    android:maxLines="0"/>
+
+                            </LinearLayout>
+
+                            <!--                        <LinearLayout-->
+                            <!--                            android:layout_width="0dp"-->
+                            <!--                            android:layout_height="match_parent"-->
+                            <!--                            android:layout_weight="0.9"-->
+                            <!--                            android:gravity="center">-->
+
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:text="ID"-->
+                            <!--                                android:textColor="@color/lavender"-->
+                            <!--                                android:textSize="18sp"-->
+                            <!--                                android:textAlignment="center"-->
+                            <!--                                android:id="@+id/recLang"/>-->
+
+                            <!--                        </LinearLayout>-->
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ToggleButton
+                                android:id="@+id/toggleButton3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textOn="Stop"
+                                android:textOff="Start"
+                                android:checked="false" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:id="@+id/sessionCard4"
+                    app:cardElevation="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="5.5">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:id="@+id/recImage4"
+                            android:layout_weight="4"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/flag_bangladesh"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:weightSum="3"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/rounded_bg">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:padding="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Server 4"
+                                    android:textStyle="bold"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textSize="20sp"
+                                    android:maxLines="1"
+                                    android:textColor="@color/lavender"
+                                    android:id="@+id/sessionName4"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Desc"
+                                    android:textSize="18sp"
+                                    android:id="@+id/recDesc4"
+                                    android:maxLines="0"/>
+
+                            </LinearLayout>
+
+                            <!--                        <LinearLayout-->
+                            <!--                            android:layout_width="0dp"-->
+                            <!--                            android:layout_height="match_parent"-->
+                            <!--                            android:layout_weight="0.9"-->
+                            <!--                            android:gravity="center">-->
+
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:text="ID"-->
+                            <!--                                android:textColor="@color/lavender"-->
+                            <!--                                android:textSize="18sp"-->
+                            <!--                                android:textAlignment="center"-->
+                            <!--                                android:id="@+id/recLang"/>-->
+
+                            <!--                        </LinearLayout>-->
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ToggleButton
+                                android:id="@+id/toggleButton4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textOn="Stop"
+                                android:textOff="Start"
+                                android:checked="false" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</FrameLayout>
