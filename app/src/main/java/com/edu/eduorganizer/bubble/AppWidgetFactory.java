@@ -38,8 +38,15 @@ public class AppWidgetFactory implements RemoteViewsService.RemoteViewsFactory {
         String[] projection = {
                 ScheduleCo.ScheduleEntry._ID,
                 ScheduleCo.ScheduleEntry.COLUMN_SUBJECT,
+                ScheduleCo.ScheduleEntry.COLUMN_SUBJECT_CODE,
                 ScheduleCo.ScheduleEntry.COLUMN_TIME,
-                ScheduleCo.ScheduleEntry.COLUMN_DAY};
+                ScheduleCo.ScheduleEntry.COLUMN_START_TIME,
+                ScheduleCo.ScheduleEntry.COLUMN_END_TIME,
+                ScheduleCo.ScheduleEntry.COLUMN_DAY,
+                ScheduleCo.ScheduleEntry.COLUMN_SECTION,
+                ScheduleCo.ScheduleEntry.COLUMN_ROOM,
+                ScheduleCo.ScheduleEntry.COLUMN_T_NAME
+        };
 
 //        ScheduleItem ittem = new ScheduleItem();
 //        ittem.setStart_time("0100:PM");

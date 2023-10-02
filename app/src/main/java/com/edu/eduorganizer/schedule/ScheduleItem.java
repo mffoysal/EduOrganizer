@@ -306,12 +306,12 @@ public class ScheduleItem implements Serializable {
     }
 
     public Cursor listToCursor(List<ScheduleItem> scheduleItemList) {
-        String[] columnNames = {"_id","id", "sId", "stdId", "temp_code", "temp_num","sub_name","sub_code","t_id","t_name","room","campus","start_time","end_time","day","dateTime"};
+        String[] columnNames = {"_id","id", "sId", "stdId", "temp_code", "temp_num","sub_name","sub_code","t_id","t_name","room","campus","start_time","end_time","day","section"};
         MatrixCursor cursor = new MatrixCursor(columnNames);
 
         for (int i = 0; i < scheduleItemList.size(); i++) {
             ScheduleItem item = scheduleItemList.get(i);
-            Object[] rowData = {i, item.getId(), item.getSId(), item.getStdId(), item.getTemp_code(),item.getTemp_num(),item.getSub_name(),item.getSub_code(),item.getTId(),item.getT_name(),item.getRoom(),item.getCampus(),item.getStart_time(),item.getEnd_time(),item.getDay(),item.getDateTime()};
+            Object[] rowData = {i, item.getId(), item.getSId(), item.getStdId(), item.getTemp_code(),item.getTemp_num(),item.getSub_name(),item.getSub_code(),item.getTId(),item.getT_name(),item.getRoom(),item.getCampus(),item.getStart_time(),item.getEnd_time(),item.getDay(),item.getSection()};
             cursor.addRow(rowData);
         }
 

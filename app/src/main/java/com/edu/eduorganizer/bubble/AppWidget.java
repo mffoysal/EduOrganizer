@@ -161,8 +161,15 @@ public class AppWidget extends AppWidgetProvider {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
         String[] projection = {
+                ScheduleCo.ScheduleEntry.COLUMN_SUBJECT,
+                ScheduleCo.ScheduleEntry.COLUMN_SUBJECT_CODE,
                 ScheduleCo.ScheduleEntry.COLUMN_TIME,
-                ScheduleCo.ScheduleEntry.COLUMN_SUBJECT
+                ScheduleCo.ScheduleEntry.COLUMN_START_TIME,
+                ScheduleCo.ScheduleEntry.COLUMN_END_TIME,
+                ScheduleCo.ScheduleEntry.COLUMN_DAY,
+                ScheduleCo.ScheduleEntry.COLUMN_SECTION,
+                ScheduleCo.ScheduleEntry.COLUMN_ROOM,
+                ScheduleCo.ScheduleEntry.COLUMN_T_NAME
         };
 
         String selection = ScheduleCo.ScheduleEntry.COLUMN_DAY + " = ?";
