@@ -76,7 +76,7 @@
         <item name="colorPrimary">#FF4040</item>
         <item name="colorPrimaryVariant">#FF6C82</item>
         <item name="colorOnPrimary">#4C1220</item>
-        <item name="android:textColor">#470C19</item>
+        <item name="android:textColor">#02B3CA</item>
         <item name="android:textColorHint">#470C19</item>
         <item name="android:textColorHighlight">#470C19</item>
 

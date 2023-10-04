@@ -8,34 +8,48 @@
     android:background="#40FFFFFF"
     >
 
-    <TextView
-        android:id="@+id/edu_title_text_view_item_widget"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:textColor="#FB3232"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:background="#50FFFFFF"
-        />
+        android:orientation="vertical"
+        android:background="#40333030">
 
-    <TextView
-        android:id="@+id/edu_date_time_text_view_item_widget"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:maxLines="1"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:textColor="#FD5757"
-        />
+        <TextView
+            android:id="@+id/edu_title_text_view_item_widget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:text="Course Name"
+            android:maxLines="1"
+            android:textColor="#FB3232"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="#50FFFFFF"
+            />
+
+
+        <TextView
+            android:id="@+id/edu_date_time_text_view_item_widget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Time &amp; Faculty"
+            android:maxLines="1"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#FD5757"
+            />
+
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

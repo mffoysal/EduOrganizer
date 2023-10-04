@@ -103,7 +103,7 @@
         <activity
             android:name=".schedule.UpdateSchedule"
             android:exported="false"
-            android:theme="@style/Theme.Onboarding" />
+            android:theme="@style/Theme.UserPanel" />
         <activity
             android:name=".schedule.NewSchedule"
             android:exported="false"

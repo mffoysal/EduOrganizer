@@ -593,7 +593,6 @@ public class ScheduleD implements UserCallback {
         ContentValues users = new ContentValues();
 
         users.put("sync_key", u.getUniqueId());
-        users.put("id", u.getUniqueId());
         users.put("sync_status", u.getSync_status());
         users.put("day", u.getDay());
         users.put("room", u.getRoom());

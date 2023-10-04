@@ -82,7 +82,7 @@
                             android:layout_gravity="center"
                             android:layout_marginStart="20dp"
                             android:layout_marginEnd="20dp"
-                            android:text="Add New Schedule!"
+                            android:text="Edit Schedule!"
                             android:textColor="@color/white"
                             android:textSize="18sp" />
 
@@ -116,7 +116,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textAlignment="viewStart"
-                                android:text="Add New Schedule"
+                                android:text="Edit Schedule"
                                 android:padding="8dp"
                                 android:textColor="@color/bg_screen1"
                                 android:layout_marginStart="12dp"
@@ -429,7 +429,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/btn_background"
-                                android:text="Save Schedule"
+                                android:text="Update Schedule"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.5"
@@ -446,22 +446,22 @@
 
             </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/saveBtnId"
-                style="@style/Widget.MaterialComponents.Button"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_gravity="bottom"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="40dp"
-                android:layout_marginBottom="20dp"
-                android:backgroundTint="@android:color/holo_red_light"
-                android:text="Save &amp; Duplicate"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                app:cornerRadius="20dp"
-                app:elevation="5dp" />
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/saveBtnId"-->
+<!--                style="@style/Widget.MaterialComponents.Button"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:layout_gravity="bottom"-->
+<!--                android:layout_marginStart="40dp"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:layout_marginEnd="40dp"-->
+<!--                android:layout_marginBottom="20dp"-->
+<!--                android:backgroundTint="@android:color/holo_red_light"-->
+<!--                android:text="Save &amp; Duplicate"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="@color/white"-->
+<!--                app:cornerRadius="20dp"-->
+<!--                app:elevation="5dp" />-->
 
         </LinearLayout>
 

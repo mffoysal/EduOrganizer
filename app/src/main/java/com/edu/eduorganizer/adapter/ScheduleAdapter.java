@@ -61,7 +61,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.MyView
     public void onBindViewHolder(@NonNull MyViewHolder3 holder, int position) {
         ScheduleItem scheduleItem = dataList.get(position);
         holder.recTitle.setText(dataList.get(position).getSub_name());
-        holder.recDesc.setText(dataList.get(position).getSub_code());
+        holder.recDesc.setText(dataList.get(position).getSub_code()+"_"+dataList.get(position).getSection());
         holder.time.setText(dataList.get(position).getStart_time()+"-"+dataList.get(position).getEnd_time());
         holder.faculty.setText(dataList.get(position).getT_name());
         holder.room.setText(dataList.get(position).getRoom());

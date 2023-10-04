@@ -46,6 +46,7 @@ import com.edu.eduorganizer.schedule.ScheduleD;
 import com.edu.eduorganizer.schedule.ScheduleItem;
 import com.edu.eduorganizer.routine.day.DailyRoutine;
 import com.edu.eduorganizer.schedule.DuplicateSchedule;
+import com.edu.eduorganizer.schedule.UpdateSchedule;
 import com.edu.eduorganizer.school.School;
 import com.edu.eduorganizer.school.SchoolCallback;
 import com.edu.eduorganizer.school.SchoolDAO;
@@ -427,7 +428,12 @@ public class DayFragment extends Fragment implements View.OnClickListener, Adapt
     @Override
     public void onEditClick(ScheduleItem scheduleItem) {
         Toast.makeText(getContext(),"Edit Button is clicked "+scheduleItem.getStdId(),Toast.LENGTH_SHORT).show();
-        showInternetDialog();
+//        showInternetDialog();
+
+        Intent intent1 = new Intent(getContext(), UpdateSchedule.class);
+        intent1.putExtra("schedule",scheduleItem);
+        startActivity(intent1);
+
     }
 
     @Override
@@ -530,6 +536,8 @@ public class DayFragment extends Fragment implements View.OnClickListener, Adapt
 
     @Override
     public void onCopyClick(ScheduleItem scheduleItem) {
-        startActivity(new Intent(getContext(), DuplicateSchedule.class));
+        Intent intent1 = new Intent(getContext(), DuplicateSchedule.class);
+        intent1.putExtra("schedule",scheduleItem);
+        startActivity(intent1);
     }
 }
