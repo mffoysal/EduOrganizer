@@ -10,8 +10,11 @@ import android.widget.RemoteViewsService;
 import com.edu.eduorganizer.R;
 import com.edu.eduorganizer.schedule.ScheduleItem;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class AppWidgetFactory implements RemoteViewsService.RemoteViewsFactory {
 
@@ -128,10 +131,30 @@ public class AppWidgetFactory implements RemoteViewsService.RemoteViewsFactory {
 //        ittem2121.setEnd_time("0500:PM");
 //        ittem2121.setSub_name("CSE112");
 //        schedules.add(ittem2121);
+        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a", Locale.getDefault());
+        String currentTime = sdf.format(new Date());
 
         cursor = new ScheduleItem().listToCursor(schedules);
 
-        cursor = context.getContentResolver().query(ScheduleCo.ScheduleEntry.CONTENT_URI, projection, ScheduleCo.ScheduleEntry.COLUMN_DAY + " = " + ScheduleCo.ScheduleEntry.COLUMN_DAY, null, null);
+        cursor = context.getContentResolver().query(ScheduleCo.ScheduleEntry.CONTENT_URI, projection, ScheduleCo.ScheduleEntry.COLUMN_DAY + " = " + ScheduleCo.ScheduleEntry.COLUMN_DAY, null, "ORDER BY " +
+                "CASE " +
+                "WHEN start_time >= "+currentTime+" THEN 1 " +
+                "ELSE 2 " +
+                "END, " +
+                "start_time ASC");
+
+
+        String sqlQuery = "SELECT * FROM "+ScheduleCo.ScheduleEntry.TABLE_NAME+" " +
+                "WHERE day = ? OR day= ? " +
+                "ORDER BY " +
+                "CASE " +
+                "WHEN start_time >= ? THEN 1 " +
+                "ELSE 2 " +
+                "END, " +
+                "start_time ASC";
+
+//        Cursor cursor = context.getContentResolver().rawQuery(sqlQuery, new String[]{day,"Everyday", currentTime});
+
         Binder.restoreCallingIdentity(identityToken);
     }
 
@@ -164,10 +187,10 @@ public class AppWidgetFactory implements RemoteViewsService.RemoteViewsFactory {
         RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_item);
 //        cursor.moveToPosition(position);
         ScheduleItem scheduleItem = schedules.get(position);
-        rv.setTextViewText(R.id.edu_title_text_view_item_widget, scheduleItem.getSub_code()+"   ~   "+scheduleItem.getSection());
+        rv.setTextViewText(R.id.edu_title_text_view_item_widget, scheduleItem.getSub_code()+"."+scheduleItem.getSection()+" ["+scheduleItem.getStart_time()+"~"+scheduleItem.getRoom()+"] "+scheduleItem.getT_name());
 //        rv.setTextViewText(R.id.edu_title_text_view_item_widget, scheduleItem.getSub_name()+" - "+scheduleItem.getSub_code());
 //        rv.setTextViewText(R.id.edu_title_text_view_item_widget, scheduleItem.getSub_name().replace("\n", " "));
-        rv.setTextViewText(R.id.edu_date_time_text_view_item_widget, "  "+scheduleItem.getStart_time()+" - "+scheduleItem.getEnd_time()+"  "+scheduleItem.getT_name());
+        rv.setTextViewText(R.id.edu_date_time_text_view_item_widget, "  "+scheduleItem.getStart_time()+" - "+scheduleItem.getEnd_time()+"  ("+scheduleItem.getRoom()+")");
 //        rv.setTextViewText(R.id.edu_date_time_text_view_item_widget, todo.getDateTime().getTimeInMillis() == 0 ? "" : DateFormat.is24HourFormat(context) ? new SimpleDateFormat("MMMM dd, yyyy  h:mm").format(todo.getDateTime().getTime()) : new SimpleDateFormat("MMMM dd, yyyy  h:mm a").format(todo.getDateTime().getTime()));
         rv.setOnClickFillInIntent(R.id.todo_layout_item_widget, new Intent().putExtra(ScheduleCo.ScheduleEntry._ID, scheduleItem.getId()));
         return rv;

@@ -50,7 +50,7 @@
                     android:layout_height="match_parent"
                     android:id="@+id/recyclerView"
                     android:layout_marginTop="8dp"
-                    android:layout_marginBottom="80dp"
+                    android:layout_marginBottom="1dp"
                     android:scrollbars="vertical"
                     android:layout_below="@id/search"/>
 
@@ -71,7 +71,7 @@
             <Button
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:text="Get"
+                android:text="Download"
                 android:drawablePadding="5dp"
                 android:paddingTop="5dp"
                 android:id="@+id/downloadRoutineId"
@@ -82,7 +82,7 @@
                 android:textAppearance="@color/lavenda"
                 android:textStyle="bold"
                 android:textAlignment="textStart"
-                android:drawableLeft="@drawable/baseline_cloud_download_24"
+                android:drawableLeft="@drawable/baseline_qr_code_scanner_24"
                 android:layout_weight="0.5"
                 android:layout_marginBottom="20dp"/>
             <Button

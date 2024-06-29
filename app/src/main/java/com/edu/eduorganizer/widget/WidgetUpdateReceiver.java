@@ -18,6 +18,7 @@ import android.widget.RemoteViews;
 import com.edu.eduorganizer.R;
 import com.edu.eduorganizer.bubble.AppWidget;
 import com.edu.eduorganizer.bubble.AppWidgetService;
+import com.edu.eduorganizer.bubble.ScheduleCo;
 import com.edu.eduorganizer.bubble.ScheduleContract;
 import com.edu.eduorganizer.bubble.Widget;
 import com.edu.eduorganizer.bubble.WidgetLaunce;
@@ -25,9 +26,12 @@ import com.edu.eduorganizer.db.DatabaseHelper;
 import com.edu.eduorganizer.schedule.ScheduleItem;
 import com.google.gson.Gson;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class WidgetUpdateReceiver extends BroadcastReceiver {
     private static final String SELECTED_DAY_KEY = "selected_day_key";
@@ -74,127 +78,148 @@ public class WidgetUpdateReceiver extends BroadcastReceiver {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
         String[] projection = {
-                ScheduleContract.ScheduleEntry.COLUMN_TIME,
-                ScheduleContract.ScheduleEntry.COLUMN_SUBJECT
+                ScheduleCo.ScheduleEntry.COLUMN_SUBJECT,
+                ScheduleCo.ScheduleEntry.COLUMN_SUBJECT_CODE,
+                ScheduleCo.ScheduleEntry.COLUMN_TIME,
+                ScheduleCo.ScheduleEntry.COLUMN_START_TIME,
+                ScheduleCo.ScheduleEntry.COLUMN_END_TIME,
+                ScheduleCo.ScheduleEntry.COLUMN_DAY,
+                ScheduleCo.ScheduleEntry.COLUMN_SECTION,
+                ScheduleCo.ScheduleEntry.COLUMN_ROOM,
+                ScheduleCo.ScheduleEntry.COLUMN_T_NAME
         };
 
-        String selection = ScheduleContract.ScheduleEntry.COLUMN_DAY + " = ?";
+        String selection = ScheduleCo.ScheduleEntry.COLUMN_DAY + " = ?";
         String[] selectionArgs = { day };
+        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a", Locale.getDefault());
+        String currentTime = sdf.format(new Date());
 
-        Cursor cursor = db.query(
-                ScheduleContract.ScheduleEntry.TABLE_NAME,
-                projection,
-                selection,
-                selectionArgs,
-                null,
-                null,
-                null
-        );
+//        Cursor cursor = db.query(
+//                ScheduleCo.ScheduleEntry.TABLE_NAME,
+//                projection,
+//                selection,
+//                selectionArgs,
+//                null,
+//                null,
+//                "start_time ASC"
+//        );
+
+
+        String sqlQuery = "SELECT * FROM "+ScheduleCo.ScheduleEntry.TABLE_NAME+" " +
+                "WHERE day = ? OR day= ? " +
+                "ORDER BY " +
+                "CASE " +
+                "WHEN start_time >= ? THEN 1 " +
+                "ELSE 2 " +
+                "END, " +
+                "start_time ASC";
+
+        Cursor cursor = db.rawQuery(sqlQuery, new String[]{day,"Everyday", currentTime});
 
         List<ScheduleItem> scheduleItems = new ArrayList<>();
         while (cursor.moveToNext()) {
-            String time = cursor.getString(cursor.getColumnIndexOrThrow(ScheduleContract.ScheduleEntry.COLUMN_TIME));
-            String subject = cursor.getString(cursor.getColumnIndexOrThrow(ScheduleContract.ScheduleEntry.COLUMN_SUBJECT));
+            String time = cursor.getString(cursor.getColumnIndexOrThrow(ScheduleCo.ScheduleEntry.COLUMN_TIME));
+            String subject = cursor.getString(cursor.getColumnIndexOrThrow(ScheduleCo.ScheduleEntry.COLUMN_SUBJECT));
             scheduleItems.add(new ScheduleItem(time, subject));
         }
 
 
-        ScheduleItem ittem = new ScheduleItem();
-        ittem.setStart_time("0100:PM");
-        ittem.setEnd_time("0330:PM");
-        ittem.setSub_name("CSE");
-        ittem.setSub_code("CSE");
-        scheduleItems.add(ittem);
-        ScheduleItem ittem2 = new ScheduleItem();
-        ittem2.setStart_time("0300:PM");
-        ittem2.setEnd_time("0500:PM");
-        ittem2.setSub_code("CSE112");
-        ittem2.setSub_name("CSE112");
-        scheduleItems.add(ittem2);
-        ScheduleItem ittem3 = new ScheduleItem();
-        ittem3.setStart_time("0100:PM");
-        ittem3.setEnd_time("0330:PM");
-        ittem3.setSub_code("CSE");
-        ittem3.setSub_name("CSE");
-        scheduleItems.add(ittem3);
-        ScheduleItem ittem21 = new ScheduleItem();
-        ittem21.setStart_time("0300:PM");
-        ittem21.setEnd_time("0500:PM");
-        ittem21.setSub_code("CSE112");
-        ittem21.setSub_name("CSE112");
-        scheduleItems.add(ittem21);
-        ScheduleItem ittem4 = new ScheduleItem();
-        ittem4.setStart_time("0100:PM");
-        ittem4.setEnd_time("0330:PM");
-        ittem4.setSub_code("CSE");
-        ittem4.setSub_name("CSE");
-        scheduleItems.add(ittem4);
-        ScheduleItem ittem22 = new ScheduleItem();
-        ittem22.setStart_time("0300:PM");
-        ittem22.setEnd_time("0500:PM");
-        ittem22.setSub_name("CSE112");
-        ittem22.setSub_code("CSE112");
-        scheduleItems.add(ittem22);
-        ScheduleItem ittem31 = new ScheduleItem();
-        ittem31.setStart_time("0100:PM");
-        ittem31.setEnd_time("0330:PM");
-        ittem31.setSub_code("CSE");
-        ittem31.setSub_name("CSE");
-        scheduleItems.add(ittem31);
-        ScheduleItem ittem212 = new ScheduleItem();
-        ittem212.setStart_time("0300:PM");
-        ittem212.setEnd_time("0500:PM");
-        ittem212.setSub_name("CSE112");
-        ittem212.setSub_code("CSE112");
-        scheduleItems.add(ittem212);
-        ScheduleItem ittem5 = new ScheduleItem();
-        ittem5.setStart_time("0100:PM");
-        ittem5.setEnd_time("0330:PM");
-        ittem5.setSub_name("CSE");
-        ittem5.setSub_code("CSE");
-        scheduleItems.add(ittem5);
-        ScheduleItem ittem223 = new ScheduleItem();
-        ittem223.setStart_time("0300:PM");
-        ittem223.setEnd_time("0500:PM");
-        ittem223.setSub_name("CSE112");
-        ittem223.setSub_code("CSE112");
-        scheduleItems.add(ittem223);
-        ScheduleItem ittem32 = new ScheduleItem();
-        ittem32.setStart_time("0100:PM");
-        ittem32.setEnd_time("0330:PM");
-        ittem32.setSub_name("CSE");
-        ittem32.setSub_code("CSE");
-        scheduleItems.add(ittem32);
-        ScheduleItem ittem211 = new ScheduleItem();
-        ittem211.setStart_time("0300:PM");
-        ittem211.setEnd_time("0500:PM");
-        ittem211.setSub_name("CSE112");
-        ittem211.setSub_code("CSE112");
-        scheduleItems.add(ittem211);
-        ScheduleItem ittem41 = new ScheduleItem();
-        ittem41.setStart_time("0100:PM");
-        ittem41.setEnd_time("0330:PM");
-        ittem41.setSub_name("CSE");
-        ittem41.setSub_code("CSE");
-        scheduleItems.add(ittem41);
-        ScheduleItem ittem221 = new ScheduleItem();
-        ittem221.setStart_time("0300:PM");
-        ittem221.setEnd_time("0500:PM");
-        ittem221.setSub_name("CSE112");
-        ittem221.setSub_code("CSE112");
-        scheduleItems.add(ittem221);
-        ScheduleItem ittem311 = new ScheduleItem();
-        ittem311.setStart_time("0100:PM");
-        ittem311.setEnd_time("0330:PM");
-        ittem311.setSub_name("CSE");
-        ittem311.setSub_code("CSE");
-        scheduleItems.add(ittem311);
-        ScheduleItem ittem2121 = new ScheduleItem();
-        ittem2121.setStart_time("0300:PM");
-        ittem2121.setEnd_time("0500:PM");
-        ittem2121.setSub_name("CSE112");
-        ittem2121.setSub_code("CSE112");
-        scheduleItems.add(ittem2121);
+//        ScheduleItem ittem = new ScheduleItem();
+//        ittem.setStart_time("0100:PM");
+//        ittem.setEnd_time("0330:PM");
+//        ittem.setSub_name("CSE");
+//        ittem.setSub_code("CSE");
+//        scheduleItems.add(ittem);
+//        ScheduleItem ittem2 = new ScheduleItem();
+//        ittem2.setStart_time("0300:PM");
+//        ittem2.setEnd_time("0500:PM");
+//        ittem2.setSub_code("CSE112");
+//        ittem2.setSub_name("CSE112");
+//        scheduleItems.add(ittem2);
+//        ScheduleItem ittem3 = new ScheduleItem();
+//        ittem3.setStart_time("0100:PM");
+//        ittem3.setEnd_time("0330:PM");
+//        ittem3.setSub_code("CSE");
+//        ittem3.setSub_name("CSE");
+//        scheduleItems.add(ittem3);
+//        ScheduleItem ittem21 = new ScheduleItem();
+//        ittem21.setStart_time("0300:PM");
+//        ittem21.setEnd_time("0500:PM");
+//        ittem21.setSub_code("CSE112");
+//        ittem21.setSub_name("CSE112");
+//        scheduleItems.add(ittem21);
+//        ScheduleItem ittem4 = new ScheduleItem();
+//        ittem4.setStart_time("0100:PM");
+//        ittem4.setEnd_time("0330:PM");
+//        ittem4.setSub_code("CSE");
+//        ittem4.setSub_name("CSE");
+//        scheduleItems.add(ittem4);
+//        ScheduleItem ittem22 = new ScheduleItem();
+//        ittem22.setStart_time("0300:PM");
+//        ittem22.setEnd_time("0500:PM");
+//        ittem22.setSub_name("CSE112");
+//        ittem22.setSub_code("CSE112");
+//        scheduleItems.add(ittem22);
+//        ScheduleItem ittem31 = new ScheduleItem();
+//        ittem31.setStart_time("0100:PM");
+//        ittem31.setEnd_time("0330:PM");
+//        ittem31.setSub_code("CSE");
+//        ittem31.setSub_name("CSE");
+//        scheduleItems.add(ittem31);
+//        ScheduleItem ittem212 = new ScheduleItem();
+//        ittem212.setStart_time("0300:PM");
+//        ittem212.setEnd_time("0500:PM");
+//        ittem212.setSub_name("CSE112");
+//        ittem212.setSub_code("CSE112");
+//        scheduleItems.add(ittem212);
+//        ScheduleItem ittem5 = new ScheduleItem();
+//        ittem5.setStart_time("0100:PM");
+//        ittem5.setEnd_time("0330:PM");
+//        ittem5.setSub_name("CSE");
+//        ittem5.setSub_code("CSE");
+//        scheduleItems.add(ittem5);
+//        ScheduleItem ittem223 = new ScheduleItem();
+//        ittem223.setStart_time("0300:PM");
+//        ittem223.setEnd_time("0500:PM");
+//        ittem223.setSub_name("CSE112");
+//        ittem223.setSub_code("CSE112");
+//        scheduleItems.add(ittem223);
+//        ScheduleItem ittem32 = new ScheduleItem();
+//        ittem32.setStart_time("0100:PM");
+//        ittem32.setEnd_time("0330:PM");
+//        ittem32.setSub_name("CSE");
+//        ittem32.setSub_code("CSE");
+//        scheduleItems.add(ittem32);
+//        ScheduleItem ittem211 = new ScheduleItem();
+//        ittem211.setStart_time("0300:PM");
+//        ittem211.setEnd_time("0500:PM");
+//        ittem211.setSub_name("CSE112");
+//        ittem211.setSub_code("CSE112");
+//        scheduleItems.add(ittem211);
+//        ScheduleItem ittem41 = new ScheduleItem();
+//        ittem41.setStart_time("0100:PM");
+//        ittem41.setEnd_time("0330:PM");
+//        ittem41.setSub_name("CSE");
+//        ittem41.setSub_code("CSE");
+//        scheduleItems.add(ittem41);
+//        ScheduleItem ittem221 = new ScheduleItem();
+//        ittem221.setStart_time("0300:PM");
+//        ittem221.setEnd_time("0500:PM");
+//        ittem221.setSub_name("CSE112");
+//        ittem221.setSub_code("CSE112");
+//        scheduleItems.add(ittem221);
+//        ScheduleItem ittem311 = new ScheduleItem();
+//        ittem311.setStart_time("0100:PM");
+//        ittem311.setEnd_time("0330:PM");
+//        ittem311.setSub_name("CSE");
+//        ittem311.setSub_code("CSE");
+//        scheduleItems.add(ittem311);
+//        ScheduleItem ittem2121 = new ScheduleItem();
+//        ittem2121.setStart_time("0300:PM");
+//        ittem2121.setEnd_time("0500:PM");
+//        ittem2121.setSub_name("CSE112");
+//        ittem2121.setSub_code("CSE112");
+//        scheduleItems.add(ittem2121);
 
         cursor.close();
         db.close();
@@ -238,7 +263,7 @@ public class WidgetUpdateReceiver extends BroadcastReceiver {
             views.setTextViewText(R.id.widgetHText,"Edubox - "+selectedDay);
 
 
-//            List<ScheduleItem> scheduleItems = fetchScheduleDataFromDatabase(context, selectedDay);
+            List<ScheduleItem> scheduleItems = fetchScheduleDataFromDatabase(context, selectedDay);
 //            List<ScheduleItem> schedules = new ArrayList<>();
 
 //            ScheduleItem ittem = new ScheduleItem();

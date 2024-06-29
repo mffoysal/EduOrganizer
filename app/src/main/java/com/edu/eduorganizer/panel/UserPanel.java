@@ -11,15 +11,25 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Dialog;
 import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +50,11 @@ import com.edu.eduorganizer.fragment.pdfFrag;
 import com.edu.eduorganizer.fragment.phoneFrag;
 import com.edu.eduorganizer.internet.Internet;
 import com.edu.eduorganizer.login.LoginPage;
+import com.edu.eduorganizer.note.NewNote;
+import com.edu.eduorganizer.routine.NewRoutine;
+import com.edu.eduorganizer.routine.SaveCurrentSchedule;
+import com.edu.eduorganizer.routine.SaveScheduleRoutine;
+import com.edu.eduorganizer.routine.ScanRoutine;
 import com.edu.eduorganizer.schedule.NewSchedule;
 import com.edu.eduorganizer.school.School;
 import com.edu.eduorganizer.school.SchoolCallback;
@@ -57,6 +72,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class UserPanel extends BaseMenu implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
@@ -87,6 +104,7 @@ public class UserPanel extends BaseMenu implements NavigationView.OnNavigationIt
     private Animation fabOpen,fabClose,rotateForward, rotateBackward;
     boolean isOpen = false;
     private FloatingActionButton fabb, fabb1, fabb2, fabb3, fabb4;
+    private Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,12 +134,13 @@ public class UserPanel extends BaseMenu implements NavigationView.OnNavigationIt
         fabb4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                showRoutineDialogue();
             }
         });
         fabb2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), NewNote.class));
 
             }
         });
@@ -223,6 +242,54 @@ public class UserPanel extends BaseMenu implements NavigationView.OnNavigationIt
         nameView.setText(user.getStdName());
         phoneView.setText(user.getPhone()+" | "+user.getEmail());
 
+
+    }
+
+    private void showRoutineDialogue() {
+
+        dialog = new Dialog(UserPanel.this);
+        dialog.setContentView(R.layout.custom_dialog);
+        dialog.setCancelable(true);
+
+
+        Button dsave = dialog.findViewById(R.id.addTask);
+        Button currentSchedule = dialog.findViewById(R.id.submitButtonId);
+        Button qrBarCode = dialog.findViewById(R.id.submitButton1Id);
+        Button createRoutine = dialog.findViewById(R.id.submitButton3Id);
+
+        dsave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                dialog.dismiss();
+            }
+        });
+        currentSchedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(UserPanel.this, SaveScheduleRoutine.class));
+                dialog.dismiss();
+            }
+        });
+        qrBarCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(UserPanel.this, ScanRoutine.class));
+                dialog.dismiss();
+            }
+        });
+        createRoutine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(UserPanel.this, NewRoutine.class));
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
 
     }
 
@@ -354,4 +421,7 @@ public class UserPanel extends BaseMenu implements NavigationView.OnNavigationIt
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
     }
+
+
+
 }

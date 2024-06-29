@@ -18,4 +18,8 @@
     <item name="toolbarr" type="id" />
     <item name="editButton" type="id" />
     <item name="linearLayout" type="id" />
+    <item name="togglebtn1" type="id"/>
+
+
+
 </resources>

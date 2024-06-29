@@ -3,8 +3,10 @@ package com.edu.eduorganizer.routine;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(tableName = "routine")
-public class Routine {
+public class Routine implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String sId, uId, stdId, temp_name, temp_code, temp_details, temp_num, uniqueId, sync_key;
@@ -36,13 +38,14 @@ public class Routine {
         this.id = id;
     }
 
-    public String getsId() {
+    public String getSId() {
         return sId;
     }
 
-    public void setsId(String sId) {
+    public void setSId(String sId) {
         this.sId = sId;
     }
+
 
     public String getuId() {
         return uId;
@@ -116,11 +119,19 @@ public class Routine {
         this.key = key;
     }
 
-    public String gettId() {
+    public String getT_id() {
         return tId;
     }
 
-    public void settId(String tId) {
+    public String getTid() {
+        return tId;
+    }
+
+    public void setTid(String tId) {
+        this.tId = tId;
+    }
+
+    public void setT_id(String tId) {
         this.tId = tId;
     }
 

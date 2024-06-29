@@ -22,10 +22,13 @@ import com.edu.eduorganizer.schedule.ScheduleItem;
 import com.edu.eduorganizer.widget.WidgetUpdateReceiver;
 import com.google.gson.Gson;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class Widget extends AppWidgetProvider {
 
@@ -158,16 +161,30 @@ public class Widget extends AppWidgetProvider {
 
         String selection = ScheduleCo.ScheduleEntry.COLUMN_DAY + " = ?";
         String[] selectionArgs = { day };
+        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a", Locale.getDefault());
+        String currentTime = sdf.format(new Date());
 
-        Cursor cursor = db.query(
-                ScheduleCo.ScheduleEntry.TABLE_NAME,
-                projection,
-                selection,
-                selectionArgs,
-                null,
-                null,
-                null
-        );
+//        Cursor cursor = db.query(
+//                ScheduleCo.ScheduleEntry.TABLE_NAME,
+//                projection,
+//                selection,
+//                selectionArgs,
+//                null,
+//                null,
+//                "start_time ASC"
+//        );
+
+
+        String sqlQuery = "SELECT * FROM "+ScheduleCo.ScheduleEntry.TABLE_NAME+" " +
+                "WHERE day = ? OR day= ? " +
+                "ORDER BY " +
+                "CASE " +
+                "WHEN start_time >= ? THEN 1 " +
+                "ELSE 2 " +
+                "END, " +
+                "start_time ASC";
+
+        Cursor cursor = db.rawQuery(sqlQuery, new String[]{day,"Everyday", currentTime});
 
         List<ScheduleItem> scheduleItems = new ArrayList<>();
         while (cursor.moveToNext()) {

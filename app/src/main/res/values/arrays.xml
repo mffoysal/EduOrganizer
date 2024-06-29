@@ -73,4 +73,64 @@
         <item>Saturday</item>
         <item>Everyday</item>
     </string-array>
+    <array name="colors">
+        <item>red</item>
+        <item>orange</item>
+        <item>yellow</item>
+        <item>green</item>
+        <item>blue</item>
+        <item>violet</item>
+    </array>
+    <array name="search_menuModes">
+        <item>Search Key</item>
+        <item>Menu Item</item>
+        <item>Type-To-Search</item>
+        <item>Disabled</item>
+    </array>
+    <array name="select_dialog_items3">
+        <item>Every Monday</item>
+        <item>Every Tuesday</item>
+        <item>Every Wednesday</item>
+        <item>Every Thursday</item>
+        <item>Every Friday</item>
+        <item>Every Saturday</item>
+        <item>Every Sunday</item>
+    </array>
+    <array name="timer_list_preference">
+        <item>Timer 1 minutes</item>
+        <item>Timer 15 minutes</item>
+        <item>Timer 30 minutes</item>
+        <item>1 Hour</item>
+        <item>2 Hour</item>
+        <item>4 Hour</item>
+    </array>
+    <array name="timer_minutes_list_preference">
+        <item>60000</item>
+        <item>900000</item>
+        <item>1800000</item>
+        <item>3600000</item>
+        <item>7200000</item>
+        <item>14400000</item>
+    </array>
+    <array name="password_qualities">
+        <item>Unspecified</item>
+        <item>Something</item>
+        <item>Numeric</item>
+        <item>Alphabetic</item>
+        <item>Alphanumeric</item>
+    </array>
+    <array name="screen_orientations">
+        <item>UNSPECIFIED</item>
+        <item>LANDSCAPE</item>
+        <item>PORTRAIT</item>
+        <item>USER</item>
+        <item>BEHIND</item>
+        <item>SENSOR</item>
+        <item>NOSENSOR</item>
+        <item>SENSOR_LANDSCAPE</item>
+        <item>SENSOR_PORTRAIT</item>
+        <item>REVERSE_LANDSCAPE</item>
+        <item>REVERSE_PORTRAIT</item>
+        <item>FULL_SENSOR</item>
+    </array>
 </resources>

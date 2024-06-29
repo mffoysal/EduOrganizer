@@ -442,6 +442,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "task_name TEXT," +
                     "uniqueId TEXT," +
+                    "scheduleId TEXT," +
                     "sId TEXT," +
                     "stdId TEXT," +
                     "uId TEXT," +
@@ -450,9 +451,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     "task_details TEXT," +
                     "task_location TEXT," +
                     "task_id TEXT," +
-                    "calendar DATETIME," +
+                    "task_code TEXT," +
+                    "calendar TEXT," +
                     "time TEXT," +
                     "day TEXT," +
+                    "url TEXT," +
+                    "link TEXT," +
+                    "dateTime TEXT," +
+                    "done INTEGER, "+
+                    "sync_status INTEGER," +
+                    "sync_key TEXT" +
+                    ");";
+
+    public static final String CALENDAR =
+            "CREATE TABLE IF NOT EXISTS calendar (" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "task_name TEXT," +
+                    "uniqueId TEXT," +
+                    "scheduleId TEXT," +
+                    "sId TEXT," +
+                    "stdId TEXT," +
+                    "uId TEXT," +
+                    "user_id TEXT," +
+                    "aStatus INTEGER," +
+                    "task_details TEXT," +
+                    "task_location TEXT," +
+                    "task_id TEXT," +
+                    "task_code TEXT," +
+                    "calendar TEXT," +
+                    "time TEXT," +
+                    "day TEXT," +
+                    "url TEXT," +
+                    "link TEXT," +
                     "dateTime TEXT," +
                     "done INTEGER, "+
                     "sync_status INTEGER," +
@@ -464,6 +494,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "task_name TEXT," +
                     "uniqueId TEXT," +
+                    "scheduleId TEXT," +
                     "sId TEXT," +
                     "stdId TEXT," +
                     "uId TEXT," +
@@ -472,9 +503,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     "task_details TEXT," +
                     "task_location TEXT," +
                     "task_id TEXT," +
-                    "calendar DATETIME," +
+                    "task_code TEXT," +
+                    "calendar TEXT," +
                     "time TIME," +
                     "day TEXT," +
+                    "url TEXT," +
+                    "link TEXT," +
                     "dateTime TEXT," +
                     "done INTEGER, "+
                     "sync_status INTEGER," +
@@ -580,6 +614,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.execSQL(SCHEDULE);
             db.execSQL(TASK);
             db.execSQL(NOTE);
+            db.execSQL(CALENDAR);
             db.execSQL(ROUTINE);
 
 //            this.copyDatabaseFromAssets();
@@ -617,6 +652,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.execSQL(SCHEDULE);
             db.execSQL(TASK);
             db.execSQL(NOTE);
+            db.execSQL(CALENDAR);
             db.execSQL(ROUTINE);
 
 //            this.copyDatabaseFromAssets();

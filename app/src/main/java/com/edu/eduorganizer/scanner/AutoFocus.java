@@ -1,4 +1,6 @@
 package com.edu.eduorganizer.scanner;
 
-public class AutoFocus {
+import com.journeyapps.barcodescanner.CaptureActivity;
+
+public class AutoFocus extends CaptureActivity {
 }

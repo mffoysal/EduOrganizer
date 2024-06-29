@@ -33,9 +33,12 @@ import com.edu.eduorganizer.Logout;
 import com.edu.eduorganizer.R;
 import com.edu.eduorganizer.User;
 import com.edu.eduorganizer.db.DatabaseManager;
+import com.edu.eduorganizer.home.HomeAutomation;
 import com.edu.eduorganizer.internet.Internet;
 import com.edu.eduorganizer.network.Connection;
 import com.edu.eduorganizer.network.Network;
+import com.edu.eduorganizer.panel.AdminPanel;
+import com.edu.eduorganizer.panel.TeacherPanel;
 import com.edu.eduorganizer.panel.UserPanel;
 import com.edu.eduorganizer.unique.Unique;
 import com.edu.eduorganizer.user.UserCallback;
@@ -78,7 +81,7 @@ public class FragmentLoginTab extends Fragment {
 
 
     private EditText loginEmail, loginPassword;
-    private TextView signupRedirectText;
+    private TextView signupRedirectText, homeAutomationRedirect;
     private Button loginButton;
     private FirebaseAuth auth;
     TextView forgotPassword;
@@ -144,6 +147,8 @@ public class FragmentLoginTab extends Fragment {
         loginPassword = view.findViewById(R.id.login_password);
         loginButton = view.findViewById(R.id.login_button);
         signupRedirectText = view.findViewById(R.id.signUpRedirectText);
+        homeAutomationRedirect = view.findViewById(R.id.homeAutomationRedirect);
+
         forgotPassword = view.findViewById(R.id.forgot_password);
         auth = FirebaseAuth.getInstance();
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -168,6 +173,12 @@ public class FragmentLoginTab extends Fragment {
             @Override
             public void onClick(View v) {
 //                startActivity(new Intent(getContext(), createUser.class));
+            }
+        });
+        homeAutomationRedirect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), HomeAutomation.class));
             }
         });
         forgotPassword.setOnClickListener(new View.OnClickListener() {
@@ -259,9 +270,17 @@ public class FragmentLoginTab extends Fragment {
             if (user.getSId()==null){
 //                intent = new Intent(getApplicationContext(), createSchool.class);
             }else {
-                intent = new Intent(getContext(), UserPanel.class);
+
+                if (user.getU_type()==3){
+                    intent = new Intent(getContext(), UserPanel.class);
+                } else if (user.getU_type()==2) {
+                    intent = new Intent(getContext(), TeacherPanel.class);
+                } else if (user.getU_type()==1) {
+                    intent = new Intent(getContext(), AdminPanel.class);
+                }
+
             }
-            Log.e("UserFound","User Succesfully Login");
+            Log.e("UserFound","User Successfully Login");
             logout.setLoggedIn(true);
             logout.setLoggedUser(a,a);
             user = userDAO.getUser(a);
@@ -349,6 +368,7 @@ public class FragmentLoginTab extends Fragment {
                         String sIdFromDB = userSnapshot.child("sid").getValue(String.class);
                         String stdIdFromDB = userSnapshot.child("stdId").getValue(String.class);
                         String stdNameFromDB = userSnapshot.child("stdName").getValue(String.class);
+                        int stdTypeFromDB = userSnapshot.child("u_type").getValue(int.class);
 
 //                        Toast.makeText(getApplicationContext(), "" + sIdFromDB, Toast.LENGTH_SHORT).show();
 
@@ -360,7 +380,13 @@ public class FragmentLoginTab extends Fragment {
                             if (sIdFromDB == null) {
                                 intent = new Intent(getContext(), ErrorPanel.class);
                             } else {
-                                intent = new Intent(getContext(), UserPanel.class);
+                                if (stdTypeFromDB==3){
+                                    intent = new Intent(getContext(), UserPanel.class);
+                                } else if (stdTypeFromDB==2) {
+                                    intent = new Intent(getContext(), TeacherPanel.class);
+                                } else if (stdTypeFromDB==1) {
+                                    intent = new Intent(getContext(), AdminPanel.class);
+                                }
                                 intent.putExtra("sId", sIdFromDB);
                             }
                             userDAO = new UserDAO(database);

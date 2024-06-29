@@ -1,5 +1,9 @@
 package com.edu.eduorganizer;
 
+import android.appwidget.AppWidgetHost;
+import android.appwidget.AppWidgetHostView;
+import android.appwidget.AppWidgetManager;
+import android.appwidget.AppWidgetProviderInfo;
 import android.content.Intent;
 import android.os.Build;
 import android.text.SpannableString;
@@ -14,6 +18,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 
+import com.edu.eduorganizer.bubble.AppWidget;
+import com.edu.eduorganizer.bubble.Widget;
+import com.edu.eduorganizer.mess.SecondHome;
 import com.edu.eduorganizer.update.AppUpdate;
 import com.edu.eduorganizer.user.UserProfile;
 
@@ -23,6 +30,9 @@ import java.util.Map;
 
 public class BaseMenu extends AppCompatActivity {
 
+    private static final int REQUEST_PICK_APPWIDGET = 101;
+    private static final int YOUR_REQUEST_CODE = 123;
+    private static final int APPWIDGET_HOST_ID = 1;
     private Intent intent;
 
     @Override
@@ -41,6 +51,8 @@ public class BaseMenu extends AppCompatActivity {
         MenuItem menuItem9 = menu.findItem(R.id.setSettings);
         MenuItem menuItem10 = menu.findItem(R.id.wifiWebMenu);
         MenuItem menuItem11 = menu.findItem(R.id.updateAppMenu);
+        MenuItem menuItem12 = menu.findItem(R.id.widgetAppMenu);
+        MenuItem menuItem13 = menu.findItem(R.id.messId);
 //        SpannableString spannableString = new SpannableString(menuItem.getTitle());
 //        spannableString.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this, R.color.menu_item_color)),
 //                0, spannableString.length(), 0);
@@ -62,6 +74,8 @@ public class BaseMenu extends AppCompatActivity {
         setColor(menuItem9);
         setColor(menuItem10);
         setColor(menuItem11);
+        setColor(menuItem12);
+        setColor(menuItem13);
         return true;
     }
 
@@ -94,6 +108,14 @@ public class BaseMenu extends AppCompatActivity {
         } else if (item.getItemId()==android.R.id.home) {
 
             onBackPressed();
+
+            return true;
+        }else if (item.getItemId()==R.id.messId) {
+
+            Intent intent = new Intent(getApplicationContext(), SecondHome.class);
+//            Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+            intent.putExtra("profile","Farhad Foysal\n+8801585855075");
+            startActivity(intent);
 
             return true;
         }else if (item.getItemId()==R.id.profileId) {
@@ -158,6 +180,11 @@ public class BaseMenu extends AppCompatActivity {
 //            notificationHelper.showBigTextNotification("Edubox","Hello farhad foysal","Farid Ahmed\nRojina Akter\nSanjida Farid Najifa","FarhadFoysal");
 //
             return true;
+        }else if (item.getItemId()==R.id.widgetAppMenu) {
+            Intent widgetPickerIntent = new Intent(AppWidgetManager.ACTION_APPWIDGET_PICK);
+            widgetPickerIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
+            startActivityForResult(widgetPickerIntent, REQUEST_PICK_APPWIDGET);
+            return true;
         }else if (item.getItemId()==R.id.shareId) {
 //            Map<String, String> msg = new HashMap<>();
 //            msg.put("01585855075","Hello Farhad Foysal");
@@ -171,6 +198,28 @@ public class BaseMenu extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == YOUR_REQUEST_CODE && resultCode == RESULT_OK) {
+            int widgetId = data.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
+            if (widgetId != AppWidgetManager.INVALID_APPWIDGET_ID) {
+                AppWidgetHost appWidgetHost = new AppWidgetHost(this, APPWIDGET_HOST_ID);
+                appWidgetHost.startListening();
+                AppWidgetHostView hostView = appWidgetHost.createView(this, widgetId, new AppWidgetProviderInfo());
+
+                // Add the widget to the home screen (not to your custom layout).
+//                appWidgetHost.addWidget(hostView);
+
+                // Start listening for updates.
+                appWidgetHost.startListening();
+
+//                appWidgetHost.stopListening();
+
+            }
+        }
     }
 
 

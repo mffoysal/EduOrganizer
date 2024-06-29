@@ -1,8 +1,12 @@
 package com.edu.eduorganizer.unique;
 
+import android.graphics.Color;
+
 import java.security.SecureRandom;
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -73,11 +77,13 @@ public class Unique {
 
     public String getTime() {
         Calendar calendar = Calendar.getInstance();
-        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int hour = calendar.get(Calendar.HOUR);
         int minute = calendar.get(Calendar.MINUTE);
+        int amPm = calendar.get(Calendar.AM_PM);
 
-        // Format the time as needed (e.g., "HH:mm" for 24-hour format)
-        String time = String.format("%02d:%02d", hour, minute);
+        String amPmString = (amPm == Calendar.AM) ? "AM" : "PM";
+
+        String time = String.format("%02d:%02d %s", hour, minute, amPmString);
 
         return time;
     }
@@ -141,7 +147,7 @@ public class Unique {
         }
         DateTimeFormatter formatter = null;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss a");
         }
 
         String dateTime = null;
@@ -156,6 +162,140 @@ public class Unique {
         long currentTime = System.currentTimeMillis();
         int uniqueId = (int) (currentTime & 0xffffffff);
         return uniqueId;
+    }
+
+    public  int unique_id() {
+        long currentTime = System.currentTimeMillis();
+        int uniqueId = (int) (currentTime & 0xffffffff);
+        return uniqueId;
+    }
+
+    private String getFormattedDate(int dayOffset) {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DAY_OF_WEEK, dayOffset);
+        Date date = cal.getTime();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return sdf.format(date);
+    }
+    private String getFormattedDay(int dayOffset) {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DAY_OF_WEEK, dayOffset);
+        Date date = cal.getTime();
+
+        // Get the three-letter day name (e.g., Mon, Tue, etc.)
+//        SimpleDateFormat dayNameFormat = new SimpleDateFormat("EEE", Locale.getDefault());
+        SimpleDateFormat dayNameFormat = new SimpleDateFormat("EEEE", Locale.getDefault());
+        return dayNameFormat.format(date);
+    }
+    private String getFormattedDay(Date date) {
+
+        SimpleDateFormat dayNameFormat = new SimpleDateFormat("EEEE", Locale.getDefault());
+
+        String dayName = dayNameFormat.format(date);
+
+        return dayName;
+    }
+
+
+    public String getToday(){
+        LocalDate currentDate = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            currentDate = LocalDate.now();
+        }
+
+        DayOfWeek dayOfWeek = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            dayOfWeek = currentDate.getDayOfWeek();
+        }
+
+        String dayName = dayOfWeek.toString();
+        return dayName;
+    }
+
+    public static Date convertStringToDate(String dateString, String format) throws ParseException {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(format);
+        return dateFormat.parse(dateString);
+    }
+
+    public static String getDayNameFromDate(Date date) {
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+        return sdf.format(date);
+    }
+
+    public static String getDayNameFromDate() {
+        Date currentDate = new Date();
+
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+        return sdf.format(currentDate);
+    }
+
+    private int getRandomColor() {
+        Random random = new Random();
+
+        int red = random.nextInt(256);
+        int green = random.nextInt(256);
+        int blue = random.nextInt(256);
+        // Create a color from the RGB values
+        return Color.rgb(red, green, blue);
+    }
+
+    public static String getDayMonth(String date) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date parsedDate = sdf.parse(date);
+        SimpleDateFormat dayOfMonthFormat = new SimpleDateFormat("dd");
+        return dayOfMonthFormat.format(parsedDate);
+    }
+
+    public static String getMonth(String date) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date parsedDate = sdf.parse(date);
+        SimpleDateFormat monthFormat = new SimpleDateFormat("MM");
+        return monthFormat.format(parsedDate);
+    }
+
+    public static String getMonthN(String date) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date parsedDate = sdf.parse(date);
+
+        SimpleDateFormat monthFormat = new SimpleDateFormat("MMM");
+
+        return monthFormat.format(parsedDate);
+    }
+
+    public static String getDayOfMonth(String dateTime) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a");
+        Date date = sdf.parse(dateTime);
+        SimpleDateFormat dayOfMonthFormat = new SimpleDateFormat("dd");
+        return dayOfMonthFormat.format(date);
+    }
+
+    public static String getDayName(String dateTime) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a", Locale.US);
+        Date date = sdf.parse(dateTime);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+
+        String[] daysOfWeek = {"", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+        return daysOfWeek[dayOfWeek];
+    }
+
+    public static String getMonthName(String dateTime) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a", Locale.US);
+        Date date = sdf.parse(dateTime);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        int month = calendar.get(Calendar.MONTH);
+
+        String[] months = {"", "Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"};
+        return months[month];
+    }
+
+    public static String getTimeWithAMPM(String dateTime) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a", Locale.US);
+        Date date = sdf.parse(dateTime);
+        SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm a", Locale.US);
+        return timeFormat.format(date);
     }
 
 }

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ads="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:id="@+id/mainLayout"  android:background="@drawable/edu" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView android:id="@+id/scrollView1" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+        <TableLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+            <TextView android:textSize="22sp" android:textStyle="bold" android:textColor="@color/label_color" android:layout_gravity="center_horizontal" android:id="@+id/txt_appname" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/app_name"/>
+            <TableRow android:background="#333333" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10dp" android:layout_weight="1">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="3">
+                    <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="22sp" android:id="@+id/textViewName1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:text="@string/device1"/>
+                    <TextView android:textSize="18sp" android:id="@+id/textViewOn1" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <ToggleButton android:layout_gravity="center_vertical" android:id="@+id/togglebtn1" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="ToggleButton" android:layout_weight="1"/>
+                <ToggleButton android:layout_gravity="center_vertical" android:id="@+id/toggletimer1" android:layout_width="wrap_content" android:layout_height="match_parent" android:textOn="@string/timer_on" android:textOff="@string/timer_off" android:layout_weight="1"/>
+                <TextView android:layout_gravity="center_vertical" android:id="@+id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:text="0.00" android:layout_weight="0.8"/>
+            </TableRow>
+            <TableRow android:background="#333333" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_weight="1">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="3">
+                    <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="22sp" android:id="@+id/textViewName2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:text="@string/device2"/>
+                    <TextView android:textSize="18sp" android:id="@+id/textViewOn2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1"/>
+                </LinearLayout>
+                <ToggleButton android:layout_gravity="center_vertical" android:id="@+id/togglebtn2" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="ToggleButton" android:layout_weight="1"/>
+                <ToggleButton android:layout_gravity="center_vertical" android:id="@+id/toggletimer2" android:layout_width="wrap_content" android:layout_height="match_parent" android:textOn="@string/timer_on" android:textOff="@string/timer_off" android:layout_weight="1"/>
+                <TextView android:layout_gravity="center_vertical" android:id="@+id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:text="0.00" android:layout_weight="0.8"/>
+            </TableRow>
+            <TableRow android:background="#333333" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_weight="1">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="3">
+                    <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="22sp" android:id="@+id/textViewName3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:text="@string/device3"/>
+                    <TextView android:textSize="18sp" android:id="@+id/TextViewOn3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1"/>
+                </LinearLayout>
+                <ToggleButton android:layout_gravity="center_vertical" android:id="@+id/togglebtn3" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="ToggleButton" android:layout_weight="1"/>
+                <ToggleButton android:layout_gravity="center_vertical" android:id="@+id/toggletimer3" android:layout_width="wrap_content" android:layout_height="match_parent" android:textOn="@string/timer_on" android:textOff="@string/timer_off" android:layout_weight="1"/>
+                <TextView android:layout_gravity="center_vertical" android:id="@+id/textView3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:text="0.00" android:layout_weight="0.8"/>
+            </TableRow>
+            <TableRow android:background="#333333" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_weight="1">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="3">
+                    <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="22sp" android:id="@+id/textViewName4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:text="@string/device4"/>
+                    <TextView android:textSize="18sp" android:id="@+id/TextViewOn4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1"/>
+                </LinearLayout>
+                <ToggleButton android:layout_gravity="center_vertical" android:id="@+id/togglebtn4" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="ToggleButton" android:layout_weight="1"/>
+                <ToggleButton android:layout_gravity="center_vertical" android:id="@+id/toggletimer4" android:layout_width="wrap_content" android:layout_height="match_parent" android:textOn="@string/timer_on" android:textOff="@string/timer_off" android:layout_weight="1"/>
+                <TextView android:layout_gravity="center_vertical" android:id="@+id/textView4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:text="0.00" android:layout_weight="0.8"/>
+            </TableRow>
+            <TableRow android:background="#333333" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_weight="1">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="3">
+                    <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="22sp" android:id="@+id/textViewName5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:text="@string/device5"/>
+                    <TextView android:textSize="18sp" android:id="@+id/TextViewOn5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1"/>
+                </LinearLayout>
+                <ToggleButton android:layout_gravity="center_vertical" android:id="@+id/togglebtn5" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="ToggleButton" android:layout_weight="1"/>
+                <ToggleButton android:layout_gravity="center_vertical" android:id="@+id/toggletimer5" android:layout_width="wrap_content" android:layout_height="match_parent" android:textOn="@string/timer_on" android:textOff="@string/timer_off" android:layout_weight="1"/>
+                <TextView android:layout_gravity="center_vertical" android:id="@+id/textView5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:text="0.00" android:layout_weight="0.8"/>
+            </TableRow>
+            <TableRow android:background="#333333" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_weight="1">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="3">
+                    <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="22sp" android:id="@+id/textViewName6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:text="@string/device6"/>
+                    <TextView android:textSize="18sp" android:id="@+id/TextViewOn6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1"/>
+                </LinearLayout>
+                <ToggleButton android:layout_gravity="center_vertical" android:id="@+id/togglebtn6" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="ToggleButton" android:layout_weight="1"/>
+                <ToggleButton android:layout_gravity="center_vertical" android:id="@+id/toggletimer6" android:layout_width="wrap_content" android:layout_height="match_parent" android:textOn="@string/timer_on" android:textOff="@string/timer_off" android:layout_weight="1"/>
+                <TextView android:layout_gravity="center_vertical" android:id="@+id/textView6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:text="0.00" android:layout_weight="0.8"/>
+            </TableRow>
+            <TableRow android:background="#333333" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_weight="1">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="3">
+                    <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="22sp" android:id="@+id/textViewName7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:text="@string/device7"/>
+                    <TextView android:textSize="18sp" android:id="@+id/TextViewOn7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1"/>
+                </LinearLayout>
+                <ToggleButton android:layout_gravity="center_vertical" android:id="@+id/togglebtn7" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1"/>
+                <ToggleButton android:layout_gravity="center_vertical" android:id="@+id/toggletimer7" android:layout_width="wrap_content" android:layout_height="match_parent" android:textOn="@string/timer_on" android:textOff="@string/timer_off" android:layout_weight="1"/>
+                <TextView android:layout_gravity="center_vertical" android:id="@+id/textView7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:text="0.00" android:layout_weight="0.8"/>
+            </TableRow>
+            <TableRow android:background="#333333" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_marginBottom="10dp" android:layout_weight="1">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="3">
+                    <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="22sp" android:id="@+id/textViewName8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:text="@string/device8"/>
+                    <TextView android:textSize="18sp" android:id="@+id/TextViewOn8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1"/>
+                </LinearLayout>
+                <ToggleButton android:layout_gravity="center_vertical" android:id="@+id/togglebtn8" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="ToggleButton" android:layout_weight="1"/>
+                <ToggleButton android:layout_gravity="center_vertical" android:id="@+id/toggletimer8" android:layout_width="wrap_content" android:layout_height="match_parent" android:textOn="@string/timer_on" android:textOff="@string/timer_off" android:layout_weight="1"/>
+                <TextView android:layout_gravity="center_vertical" android:id="@+id/textView8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:text="0.00" android:layout_weight="0.8"/>
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/bluetooth_settings" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="20sp" android:textColor="@color/status_color" android:id="@+id/txt_btstatus" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="@string/bt_status" android:layout_weight="0.1"/>
+        <Button android:id="@+id/button_connect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/button_connect"/>
+        <Button android:id="@+id/button_disconnect" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="@string/exit"/>
+    </LinearLayout>
+</LinearLayout>

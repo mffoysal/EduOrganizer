@@ -9,6 +9,7 @@
         android:name="android.hardware.camera"
         android:required="true" />
 
+    <uses-permission android:name="android.permission.BIND_APPWIDGET" />
     <uses-permission android:name="android.permission.NFC" />
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -18,8 +19,10 @@
     <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES" />
     <uses-permission android:name="android.permission.HIDE_OVERLAY_WINDOWS" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
@@ -27,7 +30,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.hardware.CAMERA" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
+
 
     <uses-feature android:name="android.hardware.bluetooth" />
     <uses-feature android:name="android.hardware.camera.flash" />
@@ -46,17 +49,24 @@
         android:name="android.hardware.telephony"
         android:required="false" />
 
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES" />
-    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -81,9 +91,120 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".home.Wireless"
+            android:exported="false" />
+        <activity
+            android:name=".home.Wifi"
+            android:exported="false" />
+        <activity
+            android:name=".home.Bluetooth"
+            android:exported="false" />
+        <activity
+            android:name=".home.BluetoothControl"
+            android:exported="false" />
+        <activity
+            android:name=".home.about"
+            android:exported="false" />
+        <activity
+            android:name=".home.DeviceListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.Set_button_name"
+            android:exported="false" />
+        <activity
+            android:name=".home.Preferences"
+            android:exported="false" />
+        <activity
+            android:name=".home.HomeAutomation"
+            android:exported="false" />
+        <activity
+            android:name=".mess.SecondHome"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".school.WebSite"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".workspace.WorkSpace"
+            android:exported="false" />
+        <activity
+            android:name=".note.NoteDetails"
+            android:exported="false" />
+        <activity
+            android:name=".widget.WidgetSetup"
+            android:exported="false" />
+        <activity
+            android:name=".widget.WidgetManager"
+            android:exported="false" />
+        <activity
+            android:name=".widget.WidgetConfig"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".routine.SaveScheduleRoutine"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".routine.schedule.ScheduleDuplicate"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".routine.schedule.DetailsSchedule"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel2" />
+        <activity
+            android:name=".routine.schedule.EditSchedule"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".routine.schedule.AddSchedule"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".routine.schedule.AddScheduleAdmin"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".routine.EditRoutine"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".routine.ShareRoutine"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".routine.RoutineSchedule"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".routine.EduRoutineSchedule"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".routine.SaveCurrentSchedule"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".routine.ScanRoutine"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".routine.NewRoutineAdmin"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".routine.NewRoutine"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
             android:name=".schedule.ScheduleDetails"
             android:exported="false"
-            android:theme="@style/Theme.UserPanel2"/>
+            android:theme="@style/Theme.UserPanel2" />
         <activity
             android:name=".note.DuplicateNote"
             android:exported="false"
@@ -133,7 +254,8 @@
         <activity
             android:name=".login.LoginPage"
             android:exported="false"
-            android:theme="@style/Theme.EduOrganizner" />
+            android:theme="@style/Theme.EduOrganizner"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".sign.PasswordForgot"
             android:exported="false" />
@@ -142,7 +264,15 @@
             android:exported="false"
             android:theme="@style/Theme.UserPanel" />
         <activity
-            android:name=".routine.day.DailyRoutine"
+            android:name=".schedule.day.DailyRoutine"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".routine.daily.DailyRoutine"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
+            android:name=".routine.daily.DailyRoutineAdmin"
             android:exported="false"
             android:theme="@style/Theme.UserPanel" />
         <activity
@@ -200,8 +330,20 @@
             android:name=".scanner.ScanIDActivity"
             android:exported="false" />
         <activity
+            android:name=".routine.RoutineScanner"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel" />
+        <activity
             android:name=".scanner.ScanIDCard"
             android:exported="false" />
+        <activity
+            android:name=".scanner.ScanId"
+            android:exported="false">
+
+            <!-- <meta-data -->
+            <!-- android:name="android.app.shortcuts" -->
+            <!-- android:resource="@xml/shortcuts" /> -->
+        </activity>
         <activity
             android:name=".settings.Permission"
             android:exported="false" />
@@ -362,13 +504,32 @@
             android:name=".update.AppUpdate"
             android:exported="false" />
         <activity
-            android:name=".panel.UserPanel"
+            android:name=".sign.createUser"
             android:exported="false"
-            android:windowSoftInputMode="adjustPan"
-            android:theme="@style/Theme.UserPanel" />
+            android:theme="@style/Theme.Onboarding" />
+        <activity
+            android:name=".school.createSchool"
+            android:exported="false"
+            android:theme="@style/Theme.Onboarding" />
         <activity
             android:name=".login.LoginMainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Onboarding" />
+        <activity
+            android:name=".panel.UserPanel"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".panel.AdminPanel"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".panel.TeacherPanel"
+            android:exported="false"
+            android:theme="@style/Theme.UserPanel"
+            android:windowSoftInputMode="adjustPan" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

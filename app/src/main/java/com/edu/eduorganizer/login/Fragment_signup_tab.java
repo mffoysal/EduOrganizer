@@ -244,10 +244,10 @@ public class Fragment_signup_tab extends Fragment {
         User user1 = new User();
         user1.setUserId(new Unique().userId());
         user1.setPhone(userPhone);
-//        user1.setId(new Admin().uniqueId());
         user1.setPass(pass);
         user1.setSId(school.getsId());
         user1.setEmail(email);
+        user1.setU_type(3);
         user1.setStdId(user);
         long rs = new UserDAO(database).insertUser(user1);
         if(rs==-1){
@@ -285,6 +285,7 @@ public class Fragment_signup_tab extends Fragment {
         user1.setId(new Unique().uniqueId());
         user1.setStdId(user);
         user1.setEmail(email);
+        user1.setU_type(3);
         user1.setSId(school.getsId());
         new UserDAO(database).saveUserInformationWithRealtime(new Unique().userId(),user1);
 

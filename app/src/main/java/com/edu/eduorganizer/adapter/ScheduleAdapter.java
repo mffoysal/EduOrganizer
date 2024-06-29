@@ -21,6 +21,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.edu.eduorganizer.R;
+import com.edu.eduorganizer.routine.ClassScheduleItem;
 import com.edu.eduorganizer.schedule.ScheduleItem;
 import com.edu.eduorganizer.schedule.ScheduleDetails;
 import com.google.android.material.button.MaterialButton;
@@ -34,6 +35,8 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.MyView
     private AdapterView.OnItemClickListener itemClickListener;
     private OnEditClickListener editClickListener;
     private OnCopyClickListener copyClickListener;
+    private OnNoteClickListener noteClickListener;
+    private OnTaskClickListener taskClickListener;
     private OnDeleteClickListener deleteClickListener;
 
     public void setSearchList(List<ScheduleItem> dataSearchList){
@@ -41,20 +44,22 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.MyView
         notifyDataSetChanged();
     }
 
-    public ScheduleAdapter(Context context, List<ScheduleItem> dataList, AdapterView.OnItemClickListener listener, OnEditClickListener editClickListener, OnDeleteClickListener deleteClickListener, OnCopyClickListener copyClickListener){
+    public ScheduleAdapter(Context context, List<ScheduleItem> dataList, AdapterView.OnItemClickListener listener, OnEditClickListener editClickListener, OnDeleteClickListener deleteClickListener, OnCopyClickListener copyClickListener, OnNoteClickListener noteClickListener, OnTaskClickListener taskClickListener){
         this.context = context;
         this.dataList = dataList;
         this.itemClickListener = listener;
         this.editClickListener = editClickListener;
         this.deleteClickListener = deleteClickListener;
         this.copyClickListener = copyClickListener;
+        this.noteClickListener = noteClickListener;
+        this.taskClickListener = taskClickListener;
     }
 
     @NonNull
     @Override
     public MyViewHolder3 onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.schedule_item, parent, false);
-        return new MyViewHolder3(view,itemClickListener,editClickListener,deleteClickListener,copyClickListener);
+        return new MyViewHolder3(view,itemClickListener,editClickListener,deleteClickListener,copyClickListener,noteClickListener,taskClickListener);
     }
 
     @Override
@@ -96,7 +101,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.MyView
 
     private void showPopUpMenu(MyViewHolder3 holder3 ,View view) {
         PopupMenu popupMenu = new PopupMenu(view.getContext(), view);
-        popupMenu.inflate(R.menu.popup_menu_item);
+        popupMenu.inflate(R.menu.schedule_popup_menu_item);
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
@@ -136,6 +141,14 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.MyView
         void onCopyClick(ScheduleItem scheduleItem);
     }
 
+    public interface OnNoteClickListener{
+        void onNoteClick(ScheduleItem scheduleItem);
+    }
+
+    public interface OnTaskClickListener{
+        void onTaskClick(ScheduleItem scheduleItem);
+    }
+
     public void removeItem(int index){
         dataList.remove(index);
         notifyItemRemoved(index);
@@ -160,14 +173,18 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.MyView
         private AdapterView.OnItemClickListener clickListener;
         private OnEditClickListener editClickListener;
         private OnDeleteClickListener deleteClickListener;
+        private OnNoteClickListener noteClickListener;
+        private OnTaskClickListener taskClickListener;
         private OnCopyClickListener copyClickListener;
 
-        public MyViewHolder3(@NonNull View itemView, AdapterView.OnItemClickListener clickListener, OnEditClickListener editClickListener, OnDeleteClickListener deleteClickListener, OnCopyClickListener copyClickListener) {
+        public MyViewHolder3(@NonNull View itemView, AdapterView.OnItemClickListener clickListener, OnEditClickListener editClickListener, OnDeleteClickListener deleteClickListener, OnCopyClickListener copyClickListener, OnNoteClickListener noteClickListener, OnTaskClickListener taskClickListener) {
             super(itemView);
             this.clickListener = clickListener;
             this.editClickListener = editClickListener;
             this.deleteClickListener = deleteClickListener;
             this.copyClickListener = copyClickListener;
+            this.noteClickListener = noteClickListener;
+            this.taskClickListener = taskClickListener;
 //            recImage = itemView.findViewById(R.id.recImage);
             recTitle = itemView.findViewById(R.id.item_class_title);
             recDesc = itemView.findViewById(R.id.item_class_code);

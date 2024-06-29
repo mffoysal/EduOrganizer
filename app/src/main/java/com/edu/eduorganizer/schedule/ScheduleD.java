@@ -95,7 +95,7 @@ public class ScheduleD implements UserCallback {
     public long insertSchedule(ScheduleItem user) {
         long l=-2;
         int r=0;
-        r = checkSchedule(user.getSub_name(),user.getSub_code(),user.getSection(),user.getDay());
+        r = checkScheduleId(user.getTId(),user.getTemp_code(),user.getTemp_num(),user.getUniqueId());
         if(r!=0){
             return -3;
         }else {
@@ -152,7 +152,17 @@ public class ScheduleD implements UserCallback {
 
         return r;
     }
+    public int checkScheduleId(String userId,String tempCode, String tempNum, String uniqueId){
+        int r = 0;
 
+        Cursor cursor = database.rawQuery("SELECT * FROM " +TABLE_SCHEDULE + " WHERE tId = ? AND temp_code=? AND temp_num=? AND uniqueId=? ",new String[]{userId,tempCode,tempNum,uniqueId});
+
+        if (cursor != null && cursor.getCount() > 0){
+            r = cursor.getCount();
+        }
+
+        return r;
+    }
     public int checkSchedule(String subName,String sub_code, String section, String day, String stdId){
         int r = 0;
 
@@ -441,6 +451,20 @@ public class ScheduleD implements UserCallback {
         }
 
         return userList;
+    }
+
+    public int deleteAllSchedule(String uniqueId) {
+        String whereClause = COLUMN_TID + " = ? OR stdId = ?";
+        String[] whereArgs = {uniqueId};
+
+        return database.delete(TABLE_SCHEDULE, whereClause, whereArgs);
+    }
+
+    public int deleteAllScheduleFromLocal(String uniqueId) {
+        String whereClause = COLUMN_TID + " = ? OR stdId = ?";
+        String[] whereArgs = {uniqueId};
+
+        return database.delete(TABLE_SCHEDULE, whereClause, whereArgs);
     }
 
     public List<ScheduleItem> getAllSchedule(String day) {

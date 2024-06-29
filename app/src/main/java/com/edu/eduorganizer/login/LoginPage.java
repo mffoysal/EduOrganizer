@@ -26,6 +26,8 @@ import com.edu.eduorganizer.db.DatabaseManager;
 import com.edu.eduorganizer.internet.Internet;
 import com.edu.eduorganizer.network.Connection;
 import com.edu.eduorganizer.network.Network;
+import com.edu.eduorganizer.panel.AdminPanel;
+import com.edu.eduorganizer.panel.TeacherPanel;
 import com.edu.eduorganizer.panel.UserPanel;
 import com.edu.eduorganizer.unique.Unique;
 import com.edu.eduorganizer.user.UserCallback;
@@ -88,7 +90,21 @@ public class LoginPage extends AppCompatActivity {
         }
         logout = new Logout(getApplicationContext());
         if (logout.isLoggedIn()){
-            Intent intent = new Intent(getApplicationContext(), UserPanel.class);
+
+            intent = getIntent();
+
+            if (intent != null && intent.hasExtra("user")) {
+                String url = intent.getStringExtra("user");
+            }
+            user = logout.getUser();
+
+            if (user.getU_type()==3){
+                intent = new Intent(getApplicationContext(), UserPanel.class);
+            } else if (user.getU_type()==2) {
+                intent = new Intent(getApplicationContext(), TeacherPanel.class);
+            } else if (user.getU_type()==1) {
+                intent = new Intent(getApplicationContext(), AdminPanel.class);
+            }
             startActivity(intent);
             finish();
         }
@@ -151,6 +167,7 @@ public class LoginPage extends AppCompatActivity {
 
         tabLayout.addTab(tabLayout.newTab().setText("Login"));
         tabLayout.addTab(tabLayout.newTab().setText("Signup"));
+        tabLayout.addTab(tabLayout.newTab().setText("Admin"));
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         adapter = new LoginPagerAdapter(fragmentManager, getLifecycle());
@@ -215,7 +232,7 @@ public class LoginPage extends AppCompatActivity {
             }else {
                 intent = new Intent(getApplicationContext(), UserPanel.class);
             }
-            Log.e("UserFound","User Succesfully Login");
+            Log.e("UserFound","User Successfully Login");
             logout.setLoggedIn(true);
             logout.setLoggedUser(a,a);
             user = userDAO.getUser(a);

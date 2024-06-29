@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ads="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:id="@+id/mainLayout" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView android:id="@+id/scrollView1" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:textAppearance="?android:attr/textAppearanceLarge" android:textStyle="bold" android:textColor="#ff00ff" android:layout_gravity="center_horizontal" android:id="@+id/textViewStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_name_set"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="5dp" android:layout_weight="1">
+                    <TextView android:textSize="16sp" android:textStyle="bold" android:textColor="#95c03b" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/button1"/>
+                    <EditText android:id="@+id/editTextDevice1_on" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="5dp" android:layout_weight="1">
+                    <TextView android:textSize="16sp" android:textStyle="bold" android:textColor="#95c03b" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/button2"/>
+                    <EditText android:id="@+id/EditTextDevice2_on" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="5dp" android:layout_weight="1">
+                    <TextView android:textSize="16sp" android:textStyle="bold" android:textColor="#95c03b" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/button3"/>
+                    <EditText android:id="@+id/EditTextDevice3_on" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="5dp" android:layout_weight="1">
+                    <TextView android:textSize="16sp" android:textStyle="bold" android:textColor="#95c03b" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/button4"/>
+                    <EditText android:id="@+id/EditTextDevice4_on" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="5dp" android:layout_weight="1">
+                    <TextView android:textSize="16sp" android:textStyle="bold" android:textColor="#95c03b" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/button5"/>
+                    <EditText android:id="@+id/EditTextDevice5_on" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="5dp" android:layout_weight="1">
+                    <TextView android:textSize="16sp" android:textStyle="bold" android:textColor="#95c03b" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/button6"/>
+                    <EditText android:id="@+id/EditTextDevice6_on" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="5dp" android:layout_weight="1">
+                    <TextView android:textSize="16sp" android:textStyle="bold" android:textColor="#95c03b" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/button7"/>
+                    <EditText android:id="@+id/EditTextDevice7_on" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="5dp" android:layout_weight="1">
+                    <TextView android:textSize="16sp" android:textStyle="bold" android:textColor="#95c03b" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/button8"/>
+                    <EditText android:id="@+id/EditTextDevice8_on" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <Button android:textSize="18sp" android:textStyle="bold" android:textColor="#ff00ff" android:layout_gravity="right" android:id="@+id/buttonRestart" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/button_restart" android:layout_weight="1" style="?android:attr/buttonStyleSmall"/>
+        <Button android:textSize="18sp" android:textStyle="bold" android:textColor="#ff00ff" android:layout_gravity="right" android:id="@+id/buttonSave" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/button_save" android:layout_weight="1" style="?android:attr/buttonStyleSmall"/>
+        <Button android:textSize="18sp" android:textStyle="bold" android:textColor="#ff00ff" android:layout_gravity="right" android:id="@+id/buttonCancel" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/button_cancel" android:layout_weight="1" style="?android:attr/buttonStyleSmall"/>
+    </LinearLayout>
+</LinearLayout>

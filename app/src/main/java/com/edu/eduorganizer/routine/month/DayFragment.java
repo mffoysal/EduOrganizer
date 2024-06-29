@@ -15,9 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,7 +42,7 @@ import com.edu.eduorganizer.login.LoginPage;
 import com.edu.eduorganizer.network.Network;
 import com.edu.eduorganizer.schedule.ScheduleD;
 import com.edu.eduorganizer.schedule.ScheduleItem;
-import com.edu.eduorganizer.routine.day.DailyRoutine;
+import com.edu.eduorganizer.schedule.day.DailyRoutine;
 import com.edu.eduorganizer.schedule.DuplicateSchedule;
 import com.edu.eduorganizer.schedule.UpdateSchedule;
 import com.edu.eduorganizer.school.School;
@@ -70,7 +68,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class DayFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemClickListener, ItemTouchListener, ScheduleAdapter.OnEditClickListener, ScheduleAdapter.OnDeleteClickListener, ScheduleAdapter.OnCopyClickListener {
+public class DayFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemClickListener, ItemTouchListener, ScheduleAdapter.OnEditClickListener, ScheduleAdapter.OnDeleteClickListener, ScheduleAdapter.OnCopyClickListener, ScheduleAdapter.OnNoteClickListener, ScheduleAdapter.OnTaskClickListener {
 
 
 
@@ -87,7 +85,7 @@ public class DayFragment extends Fragment implements View.OnClickListener, Adapt
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference schoolRef = firebaseDatabase.getReference("school");
     private DatabaseReference majorRef = firebaseDatabase.getReference("major");
-    private DatabaseReference studentRef = firebaseDatabase.getReference("students");
+    private DatabaseReference studentRef = firebaseDatabase.getReference("schedule");
 
     private DatabaseReference usersRef;
     private UserCallback userCallback;
@@ -274,7 +272,7 @@ public class DayFragment extends Fragment implements View.OnClickListener, Adapt
 //        androidData.setstdId("221005315");
 //        dataList.add(androidData);
 
-        adapter = new ScheduleAdapter(getContext(), dataList,this, this, this,this);
+        adapter = new ScheduleAdapter(getContext(), dataList,this, this, this,this,this,this);
         recyclerView.setAdapter(adapter);
 
 //        fetchSchedulesFromLocal();
@@ -301,7 +299,7 @@ public class DayFragment extends Fragment implements View.OnClickListener, Adapt
         dataList = scheduleD.getAllSchedule(getFormattedDay(dayOffset));
 
         adapter.notifyDataSetChanged();
-        adapter = new ScheduleAdapter(getContext(), dataList,this, this, this,this);
+        adapter = new ScheduleAdapter(getContext(), dataList,this, this, this,this,this,this);
         recyclerView.setAdapter(adapter);
     }
 
@@ -421,6 +419,12 @@ public class DayFragment extends Fragment implements View.OnClickListener, Adapt
 
         }
     }
+
+    @Override
+    public void onMove(RecyclerView recyclerView, RecyclerView.ViewHolder source, RecyclerView.ViewHolder target) {
+
+    }
+
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
@@ -539,5 +543,15 @@ public class DayFragment extends Fragment implements View.OnClickListener, Adapt
         Intent intent1 = new Intent(getContext(), DuplicateSchedule.class);
         intent1.putExtra("schedule",scheduleItem);
         startActivity(intent1);
+    }
+
+    @Override
+    public void onNoteClick(ScheduleItem scheduleItem) {
+
+    }
+
+    @Override
+    public void onTaskClick(ScheduleItem scheduleItem) {
+
     }
 }

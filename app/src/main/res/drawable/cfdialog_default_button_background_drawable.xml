@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/cfdialog_button_corner_radius"/>
+            <stroke android:width="1dp" android:color="#90a4ae"/>
+            <solid android:color="#cfd8dc"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/cfdialog_button_corner_radius"/>
+            <stroke android:width="1dp" android:color="#cfd8dc"/>
+            <solid android:color="@android:color/white"/>
+        </shape>
+    </item>
+</selector>

@@ -42,17 +42,7 @@ public class ClassScheduleItem implements Serializable {
         return section;
     }
 
-    public String getsId() {
-        return sId;
-    }
 
-    public String gettId() {
-        return tId;
-    }
-
-    public void settId(String tId) {
-        this.tId = tId;
-    }
 
     public String getSync_key() {
         return sync_key;
@@ -70,9 +60,6 @@ public class ClassScheduleItem implements Serializable {
         this.sync_status = sync_status;
     }
 
-    public void setsId(String sId) {
-        this.sId = sId;
-    }
 
     public void setSection(String section) {
         this.section = section;

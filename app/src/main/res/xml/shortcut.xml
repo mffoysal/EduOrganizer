@@ -32,6 +32,21 @@
             android:targetPackage="com.edu.eduorganizer"/>
     </shortcut>
 
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:shortcutId="shortcutMess"
+        android:shortcutShortLabel="@string/messname"
+        android:shortcutLongLabel="@string/messlabel"
+        android:shortcutDisabledMessage="@string/messdis"
+
+        >
+        <intent
+            android:action="com.boltuix.appshortcut.MainActivity.VIEWER"
+            android:targetClass="com.edu.eduorganizer.mess.SecondHome"
+            android:targetPackage="com.edu.eduorganizer"/>
+    </shortcut>
+
     <!--static shortcut 1-->
     <shortcut
         android:shortcutId="shortcut3"
@@ -59,6 +74,21 @@
             android:targetClass="com.edu.eduorganizer.scanner.ScanIDActivity"
             android:data="jetpack://shortCut"
             android:targetPackage="com.edu.eduorganizer" />
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:shortcutId="shortcutAtn"
+        android:icon="@drawable/baseline_add_card_24"
+        android:shortcutShortLabel="@string/shortcut_label4"
+        android:shortcutLongLabel="@string/shortcut_label1_long"
+        android:shortcutDisabledMessage="@string/shortcut_disabled_message1">
+
+        >
+        <intent
+            android:action="com.boltuix.appshortcut.MainActivity.SET_ATTENDANCE"
+            android:targetClass="com.edu.eduorganizer.scanner.ScanIDActivity"
+            android:targetPackage="com.edu.eduorganizer"/>
     </shortcut>
 
 </shortcuts>

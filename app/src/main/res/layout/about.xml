@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ads="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:id="@+id/rootViewGroup" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView android:layout_gravity="center_horizontal" android:id="@+id/imageView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/android"/>
+    <TextView android:textAppearance="?android:attr/textAppearanceLarge" android:id="@+id/textViewAbout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="@string/about_developer"/>
+    <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:autoLink="email" android:id="@+id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:text="@string/about_email"/>
+    <TextView android:textAppearance="?android:attr/textAppearanceLarge" android:id="@+id/textViewCompany" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/about_company"/>
+    <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/textViewTel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:text="@string/about_tel"/>
+    <TextView android:textSize="18sp" android:textColor="#000000" android:id="@+id/textViewLink" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="URL"/>
+    <TextView android:textSize="22sp" android:textColor="#ff0000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/about_code"/>
+    <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:textColor="#0000ff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/about_cost"/>
+</LinearLayout>

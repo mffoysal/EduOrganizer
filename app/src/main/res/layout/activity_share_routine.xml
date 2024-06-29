@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".routine.ShareRoutine">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:gravity="center"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:id="@+id/sessionCard"
+                    app:cardElevation="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="5.5">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:id="@+id/barcodeImageId"
+                            android:layout_weight="4"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/flag_bangladesh"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:weightSum="3"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/rounded_bg">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:padding="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="tempNum"
+                                    android:textStyle="bold"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textSize="20sp"
+                                    android:maxLines="1"
+                                    android:textColor="@color/lavender"
+                                    android:id="@+id/barcodeTextId"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Desc"
+                                    android:textSize="18sp"
+                                    android:id="@+id/recDesc"
+                                    android:maxLines="0"/>
+
+                            </LinearLayout>
+
+                            <!--                        <LinearLayout-->
+                            <!--                            android:layout_width="0dp"-->
+                            <!--                            android:layout_height="match_parent"-->
+                            <!--                            android:layout_weight="0.9"-->
+                            <!--                            android:gravity="center">-->
+
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:text="ID"-->
+                            <!--                                android:textColor="@color/lavender"-->
+                            <!--                                android:textSize="18sp"-->
+                            <!--                                android:textAlignment="center"-->
+                            <!--                                android:id="@+id/recLang"/>-->
+
+                            <!--                        </LinearLayout>-->
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+                <!--        <EditText-->
+                <!--            android:id="@+id/num1"-->
+                <!--            android:layout_marginTop="5dp"-->
+                <!--            android:layout_width="match_parent"-->
+                <!--            android:layout_height="50dp"-->
+                <!--            android:textSize="22sp"-->
+                <!--            android:textStyle="bold"-->
+                <!--            android:textAlignment="center"-->
+                <!--            android:textColor="@color/white"-->
+                <!--            android:textColorHighlight="#2196F3"-->
+                <!--            android:background="#8BC34A"-->
+                <!--            android:backgroundTint="#2196F3"-->
+                <!--            android:backgroundTintMode="screen"-->
+                <!--            android:hint="Enter Number One"-->
+                <!--            android:textCursorDrawable="@color/black"-->
+                <!--            android:padding="5dp"-->
+                <!--            android:cursorVisible="true"-->
+                <!--            android:inputType="numberDecimal"-->
+                <!--            android:textAllCaps="true"-->
+                <!--            android:text="">-->
+
+                <!--        </EditText>-->
+                <!--        <EditText-->
+                <!--            android:id="@+id/num2"-->
+                <!--            android:layout_marginTop="5dp"-->
+                <!--            android:layout_width="match_parent"-->
+                <!--            android:layout_height="50dp"-->
+                <!--            android:textSize="22sp"-->
+                <!--            android:textStyle="bold"-->
+                <!--            android:textAlignment="center"-->
+                <!--            android:textColor="@color/white"-->
+                <!--            android:textColorHighlight="#2196F3"-->
+                <!--            android:background="#8BC34A"-->
+                <!--            android:backgroundTint="#4CAF50"-->
+                <!--            android:backgroundTintMode="screen"-->
+                <!--            android:hint="Enter Number Two"-->
+                <!--            android:textCursorDrawable="@color/black"-->
+                <!--            android:padding="5dp"-->
+                <!--            android:cursorVisible="true"-->
+                <!--            android:inputType="numberDecimal"-->
+                <!--            android:textAllCaps="true"-->
+                <!--            android:text="">-->
+
+                <!--        </EditText>-->
+
+
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="end"-->
+<!--                    android:textAlignment="textEnd"-->
+<!--                    android:padding="10dp"-->
+<!--                    >-->
+
+<!--                    <Button-->
+<!--                        android:layout_marginRight="5dp"-->
+<!--                        android:id="@+id/clearButtonId"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Sub"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textAllCaps="true"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:backgroundTint="#A50E41"-->
+<!--                        android:padding="5dp">-->
+
+<!--                    </Button>-->
+<!--                    <Button-->
+<!--                        android:id="@+id/submitButtonId"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="ADD"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textAllCaps="true"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:backgroundTint="#2196F3"-->
+<!--                        android:padding="5dp">-->
+
+<!--                    </Button>-->
+
+<!--                </LinearLayout>-->
+
+                <TextView
+                    android:id="@+id/resultId"
+                    android:padding="5dp"
+                    android:layout_margin="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#ff22"
+                    android:textAlignment="center">
+
+                </TextView>
+
+
+
+
+<!--                        <ScrollView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content">-->
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:orientation="vertical">-->
+<!--                                <ImageView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="460dp"-->
+<!--                                    android:src="@drawable/abbu1"-->
+<!--                                    android:scaleType="fitXY"-->
+<!--                                    android:id="@+id/imageId"-->
+<!--                                    android:layout_margin="8dp">-->
+
+<!--                                </ImageView>-->
+<!--                                <ImageView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="460dp"-->
+<!--                                    android:src="@drawable/abbu2"-->
+<!--                                    android:scaleType="fitXY"-->
+<!--                                    android:id="@+id/image2Id"-->
+<!--                                    android:layout_margin="8dp">-->
+
+<!--                                </ImageView>-->
+<!--                                <ImageView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="460dp"-->
+<!--                                    android:src="@drawable/abbu3"-->
+<!--                                    android:scaleType="fitXY"-->
+<!--                                    android:id="@+id/image3Id"-->
+<!--                                    android:layout_margin="8dp">-->
+
+<!--                                </ImageView>-->
+<!--                                <ImageView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="460dp"-->
+<!--                                    android:src="@drawable/abbu4"-->
+<!--                                    android:scaleType="fitXY"-->
+<!--                                    android:id="@+id/image4Id"-->
+<!--                                    android:layout_margin="8dp">-->
+
+<!--                                </ImageView>-->
+<!--                            </LinearLayout>-->
+
+<!--                        </ScrollView>-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="5dp"
+                android:background="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/qrTextId"
+                    android:textAlignment="center"
+                    android:text="RoutineTempCode"
+                    android:textStyle="bold"
+                    android:textColor="#00BCD4"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/qrImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_launcher_foreground" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnStatusId"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="1dp"
+                    android:text="Not Synced! Please Click Here To Sync"
+                    android:textAllCaps="false"
+                    android:textColor="@color/bg_screen1"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:theme="@style/Theme.MaterialComponents"
+                    app:cornerRadius="50dp"
+                    app:elevation="5dp"
+                    app:rippleColor="@color/bg_screen1"
+                    app:strokeColor="@color/bg_screen1" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</LinearLayout>

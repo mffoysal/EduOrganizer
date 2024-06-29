@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="?colorPrimary"
-    tools:context=".routine.RoutinDetails"
-    tools:ignore="MergeRootFrame">
+    tools:context=".routine.RoutinDetails">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/settings_appbar_layout"
         android:layout_width="match_parent"

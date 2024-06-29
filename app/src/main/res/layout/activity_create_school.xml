@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bk"
+    android:focusableInTouchMode="true"
+    tools:context=".school.createSchool">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/loginHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/loginViewsMargin"
+                android:text="Create School">
+
+            </TextView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutId"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+
+
+                <EditText
+                    android:id="@+id/snameId"
+                    android:hint="School Name"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    style="@style/modifiedEditText">
+
+                </EditText>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutId1"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+
+
+                <EditText
+                    android:id="@+id/semailId"
+                    android:hint="School Email"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    style="@style/modifiedEditText">
+
+                </EditText>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutId2"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+
+
+                <EditText
+                    android:id="@+id/sphoneId"
+                    android:hint="Phone Number"
+                    android:inputType="phone"
+                    android:maxLines="1"
+                    style="@style/modifiedEditText">
+
+                </EditText>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutId3"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+
+
+                <EditText
+                    android:id="@+id/spassId"
+                    android:hint="Password"
+                    android:inputType="numberPassword"
+                    android:maxLines="1"
+                    style="@style/modifiedEditText">
+
+                </EditText>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutId4"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+
+
+                <EditText
+                    android:id="@+id/sadrsId"
+                    android:hint="School Address"
+                    android:inputType="textMultiLine"
+                    android:maxLines="1"
+                    style="@style/modifiedEditText">
+
+                </EditText>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutId5"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+
+
+                <EditText
+                    android:id="@+id/sEiinId"
+                    android:hint="EIIN No"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    style="@style/modifiedEditText">
+
+                </EditText>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutId6"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+
+
+                <EditText
+                    android:id="@+id/sItemailId"
+                    android:hint="IT Email"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    style="@style/modifiedEditText">
+
+                </EditText>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutId7"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+
+
+                <EditText
+                    android:id="@+id/sWebId"
+                    android:hint="Website Url"
+                    android:inputType="textUri"
+                    android:maxLines="1"
+                    style="@style/modifiedEditText">
+
+                </EditText>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutId8"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+
+
+                <EditText
+                    android:id="@+id/sitphone1"
+                    style="@style/modifiedEditText"
+                    android:hint="IT Phone One"
+                    android:inputType="phone"
+                    android:maxLines="1">
+
+                </EditText>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutId9"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+
+
+                <EditText
+                    android:id="@+id/sitphone2"
+                    android:hint="IT Phone 2"
+                    android:inputType="phone"
+                    android:maxLines="1"
+                    style="@style/modifiedEditText">
+
+                </EditText>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutId10"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+
+
+                <EditText
+                    android:id="@+id/sfundBal"
+                    android:hint="Balance"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    style="@style/modifiedEditText">
+
+                </EditText>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutId11"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+
+
+                <EditText
+                    android:id="@+id/sfundBank"
+                    android:hint="Bank Name"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    style="@style/modifiedEditText">
+
+                </EditText>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutId12"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+
+
+                <EditText
+                    android:id="@+id/sBankAccount"
+                    android:hint="Account : "
+                    android:inputType="text"
+                    android:maxLines="1"
+                    style="@style/modifiedEditText">
+
+                </EditText>
+
+
+            </com.google.android.material.textfield.TextInputLayout>        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutId13"
+            style="@style/parent"
+            android:layout_marginTop="@dimen/loginViewsMargin">
+
+
+            <EditText
+                android:id="@+id/sVerification"
+                android:hint="Verification Code"
+                android:inputType="text"
+                android:maxLines="1"
+                style="@style/modifiedEditText">
+
+            </EditText>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <Button
+                android:id="@+id/saveSchoolButtonId"
+                style="@style/loginButton"
+                android:layout_gravity="right"
+                android:layout_marginTop="@dimen/loginViewsMargin"
+                android:text="Save Data"
+                android:textSize="24sp"
+                android:layout_marginBottom="50dp">
+
+            </Button>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

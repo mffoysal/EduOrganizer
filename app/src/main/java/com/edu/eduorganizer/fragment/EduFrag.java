@@ -34,9 +34,11 @@ import com.edu.eduorganizer.login.LoginPage;
 import com.edu.eduorganizer.network.Network;
 import com.edu.eduorganizer.school.School;
 import com.edu.eduorganizer.school.SchoolCallback;
+import com.edu.eduorganizer.school.WebSite;
 import com.edu.eduorganizer.student.Student;
 import com.edu.eduorganizer.user.UserCallback;
 import com.edu.eduorganizer.user.UserDAO;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -101,15 +103,15 @@ public class EduFrag extends Fragment {
         databaseManager.openDatabase();
         database = databaseManager.getDatabase();
 
-//        fab = findViewById(R.id.fab);
-//
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getApplicationContext(), schoolUpload.class);
-//                startActivity(intent);
-//            }
-//        });
+        FloatingActionButton fab = view.findViewById(R.id.fab);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), WebSite.class);
+                startActivity(intent);
+            }
+        });
 
         // Common for all activity Start
         logout = new Logout(getContext());
@@ -229,7 +231,7 @@ public class EduFrag extends Fragment {
 
     class myPagerAdapter extends FragmentPagerAdapter {
 
-        String[] text = {"ROUTINES","COURSES","CAMPUS"};
+        String[] text = {"ROUTINE","CAMPUS","EXAM","COURSE","NOTICE"};
 
         public myPagerAdapter(@NonNull FragmentManager fm) {
             super(fm);
@@ -242,9 +244,13 @@ public class EduFrag extends Fragment {
             if(position==0){
                 return new EduRoutine();
             } else if (position==1) {
-                return new EduCourse();
-            } else if (position==2) {
                 return new EduCampus();
+            } else if (position==2) {
+                return new EduExam();
+            } else if (position==3) {
+                return new EduCourse();
+            } else if (position==4) {
+                return new EduNotice();
             }
 
             return null;

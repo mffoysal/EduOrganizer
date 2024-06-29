@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.EduFrag">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="match_parent"
+                android:background="#E6F1FA"
+                android:backgroundTint="#2E0D0B"
+                app:tabTextColor="#55D6E6"
+                android:layout_height="wrap_content"
+                android:id="@+id/tabLayId"
+                app:tabMode="scrollable"
+                android:layout_alignParentTop="true">
+
+            </com.google.android.material.tabs.TabLayout>
+
+
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E6F1FA"
+                android:backgroundTint="#230B0A"
+                app:tabTextColor="#55D6E6"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/tabLayIdd"
+                android:visibility="gone">
+
+            </com.google.android.material.tabs.TabLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="60dp">
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginBottom="0dp"-->
+            <!--                android:backgroundTint="@color/zxing_transparent"-->
+            <!--                android:background="@color/zxing_transparent"-->
+            <!--                android:orientation="horizontal">-->
+            <!--                <Button-->
+            <!--                    android:layout_width="50dp"-->
+            <!--                    android:layout_height="40dp"-->
+            <!--                    android:text="SCHEDULES"-->
+            <!--                    android:drawablePadding="3dp"-->
+            <!--                    android:paddingTop="2dp"-->
+            <!--                    android:id="@+id/downloadRoutineId"-->
+            <!--                    android:textColor="#FB3C3C"-->
+            <!--                    android:textSize="18sp"-->
+            <!--                    android:background="@color/zxing_transparent"-->
+            <!--                    android:textColorHint="@color/lavenda"-->
+            <!--                    android:textAppearance="@color/lavenda"-->
+            <!--                    android:textStyle="bold"-->
+            <!--                    android:textAlignment="textStart"-->
+            <!--                    android:drawableLeft="@drawable/outline_schedule_24"-->
+            <!--                    android:layout_weight="0.5"-->
+            <!--                    android:layout_marginBottom="2dp"/>-->
+            <!--                <Button-->
+            <!--                    android:layout_width="50dp"-->
+            <!--                    android:layout_height="40dp"-->
+            <!--                    android:text="EDU"-->
+            <!--                    android:drawablePadding="3dp"-->
+            <!--                    android:paddingTop="2dp"-->
+            <!--                    android:id="@+id/addRoutineId"-->
+            <!--                    android:textAlignment="textEnd"-->
+            <!--                    android:textColor="#F44336"-->
+            <!--                    android:textSize="18sp"-->
+            <!--                    android:textStyle="bold"-->
+            <!--                    android:background="@color/zxing_transparent"-->
+            <!--                    android:drawableRight="@drawable/outline_update_24"-->
+            <!--                    android:layout_weight="0.5"-->
+            <!--                    android:layout_marginBottom="2dp"/>-->
+
+            <!--            </LinearLayout>-->
+
+            <androidx.viewpager.widget.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/viewPagerId">
+
+
+            </androidx.viewpager.widget.ViewPager>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginBottom="30dp"-->
+    <!--        android:backgroundTint="@color/zxing_transparent"-->
+    <!--        android:background="@color/zxing_transparent"-->
+    <!--        android:orientation="horizontal">-->
+    <!--        <Button-->
+    <!--            android:layout_width="50dp"-->
+    <!--            android:layout_height="50dp"-->
+    <!--            android:text="SCHEDULES"-->
+    <!--            android:drawablePadding="5dp"-->
+    <!--            android:paddingTop="5dp"-->
+    <!--            android:id="@+id/downloadRoutineId"-->
+    <!--            android:textColor="#FB3C3C"-->
+    <!--            android:textSize="20sp"-->
+    <!--            android:background="@color/zxing_transparent"-->
+    <!--            android:textColorHint="@color/lavenda"-->
+    <!--            android:textAppearance="@color/lavenda"-->
+    <!--            android:textStyle="bold"-->
+    <!--            android:textAlignment="textStart"-->
+    <!--            android:drawableLeft="@drawable/outline_schedule_24"-->
+    <!--            android:layout_weight="0.5"-->
+    <!--            android:layout_marginBottom="20dp"/>-->
+    <!--        <Button-->
+    <!--            android:layout_width="50dp"-->
+    <!--            android:layout_height="50dp"-->
+    <!--            android:text="EDU"-->
+    <!--            android:drawablePadding="5dp"-->
+    <!--            android:paddingTop="5dp"-->
+    <!--            android:id="@+id/addRoutineId"-->
+    <!--            android:textAlignment="textEnd"-->
+    <!--            android:textColor="#FB3C3C"-->
+    <!--            android:textSize="20sp"-->
+    <!--            android:textStyle="bold"-->
+    <!--            android:background="@color/zxing_transparent"-->
+    <!--            android:drawableRight="@drawable/outline_update_24"-->
+    <!--            android:layout_weight="0.5"-->
+    <!--            android:layout_marginBottom="20dp"/>-->
+
+    <!--    </LinearLayout>-->
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="75dp">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="40dp"
+            android:background="@color/whitesmoke"
+            android:src="@drawable/baseline_web_24"
+            android:tint="@color/white">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabRoutineAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="40dp"
+            android:background="@color/whitesmoke"
+            android:src="@drawable/outline_note_add_24"
+            android:tint="@color/white">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    </RelativeLayout>
+
+</FrameLayout>

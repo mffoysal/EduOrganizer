@@ -26,7 +26,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.edu.eduorganizer.Logout;
-import com.edu.eduorganizer.MainPanelActivity;
 import com.edu.eduorganizer.R;
 import com.edu.eduorganizer.User;
 import com.edu.eduorganizer.db.DatabaseManager;
@@ -230,7 +229,7 @@ public class NotesFrag extends Fragment {
 
     class myPagerAdapter extends FragmentPagerAdapter {
 
-        String[] text = {"NOTES","TASKS","OTHERS"};
+        String[] text = {"NOTES","TASKS","CALENDAR"};
 
         public myPagerAdapter(@NonNull FragmentManager fm) {
             super(fm);
@@ -241,9 +240,9 @@ public class NotesFrag extends Fragment {
         public Fragment getItem(int position) {
 
             if(position==0){
-                return new Note();
+                return new Notes();
             } else if (position==1) {
-                return new Task();
+                return new Tasks();
             } else if (position==2) {
                 return new NoteOther();
             }

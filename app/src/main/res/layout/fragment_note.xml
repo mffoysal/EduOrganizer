@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragment.Note"
+    tools:context=".fragment.Notes"
     android:orientation="vertical">
 
 
@@ -27,7 +27,7 @@
                 <Button
                     android:layout_width="50dp"
                     android:layout_height="40dp"
-                    android:text="Get"
+                    android:text="WORKSPACES"
                     android:drawablePadding="3dp"
                     android:paddingTop="2dp"
                     android:id="@+id/downloadRoutineId"
@@ -38,7 +38,7 @@
                     android:textAppearance="@color/lavenda"
                     android:textStyle="bold"
                     android:textAlignment="textStart"
-                    android:drawableLeft="@drawable/baseline_cloud_download_24"
+                    android:drawableLeft="@drawable/baseline_workspaces_24"
                     android:layout_weight="0.5"
                     android:layout_marginBottom="2dp"/>
                 <Button

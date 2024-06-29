@@ -82,7 +82,7 @@
                     android:id="@+id/signup_id"
                     android:layout_marginTop="20dp"
                     android:padding="8dp"
-                    android:hint="ID"
+                    android:hint="Student ID|Roll No"
                     android:inputType="textAutoComplete"
                     android:drawableLeft="@drawable/baseline_add_card_24"
                     android:drawablePadding="8dp"

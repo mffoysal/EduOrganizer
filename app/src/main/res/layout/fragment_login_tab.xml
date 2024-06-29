@@ -14,6 +14,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/edu"
             android:orientation="vertical">
 
             <LinearLayout
@@ -23,10 +24,27 @@
                 android:layout_marginTop="20dp"
                 android:padding="20dp">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:src="@drawable/loginimg"/>
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="200dp"-->
+<!--                    android:src="@drawable/loginimg"/>-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="200dp"-->
+<!--                    android:src="@drawable/edu"/>-->
+
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_width="wrap_content"
+                        android:layout_height="230dp"
+                        android:id="@+id/dashImage2Id"
+                        app:lottie_rawRes="@raw/hello1"
+                        app:lottie_autoPlay="true">
+
+                    </com.airbnb.lottie.LottieAnimationView>
+
+
 
                 <EditText
                     android:layout_width="300dp"
@@ -89,6 +107,20 @@
                     android:textAlignment="center"
                     android:textColor="@color/lavender"
                     android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/homeAutomationRedirect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:padding="8dp"
+                    android:layout_gravity="center"
+                    android:text="Go To-> Home Automation"
+                    android:textAlignment="center"
+                    android:textColor="#FACB40"
+                    android:textSize="18sp" />
+
 
             </LinearLayout>
 

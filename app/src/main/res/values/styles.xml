@@ -62,5 +62,17 @@
         <item name="android:padding">10dp</item>
         <!-- Add other styling attributes as needed -->
     </style>
-
+    <style name="customDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_zoom_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_zoom_out</item>
+    </style>
+    <style name="TransparentBackground">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/customDialogAnimation</item>
+    </style>
+    <style name="TransparentBackground_Exit">
+        <item name="android:windowBackground">@color/exit_transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
 </resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/edu"
+    tools:context=".home.HomeAutomation">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:padding="10dp"
+        >
+        <Button
+            android:layout_marginRight="5dp"
+            android:id="@+id/bluetoothButtonId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:backgroundTint="#E81405"
+            android:padding="5dp">
+
+        </Button>
+        <Button
+            android:layout_marginRight="5dp"
+            android:id="@+id/wifiButtonId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wifi"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:backgroundTint="#2196F3"
+            android:padding="5dp">
+
+        </Button>
+        <Button
+            android:layout_marginRight="5dp"
+            android:id="@+id/wirelessButtonId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wireless"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:backgroundTint="#A50E41"
+            android:padding="5dp">
+
+        </Button>
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

@@ -44,7 +44,7 @@ public class Welcome extends BaseMenu implements View.OnClickListener {
                 startActivity(intent);
                 finish();
             }
-        }, 4000);
+        }, 2000);
 
 
     }

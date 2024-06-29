@@ -25,10 +25,10 @@
             android:ellipsize="end"
             android:text="Course Name"
             android:maxLines="1"
-            android:textColor="#FB3232"
-            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
             android:textStyle="bold"
-            android:background="#50FFFFFF"
+            android:background="#4F330D0A"
             />
 
 
@@ -44,7 +44,7 @@
             android:maxLines="1"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:textColor="#FD5757"
+            android:textColor="#FDFFFF"
             />
 
 
